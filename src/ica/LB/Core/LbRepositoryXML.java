@@ -20,8 +20,7 @@ public class LbRepositoryXML {
         context = ctx;
 	}
     
-	public static Lb getLb()
-    {
+	public static Lb getLb() {
 		if (lb == null) {
 			lb = new Lb();
             try {
@@ -72,16 +71,16 @@ public class LbRepositoryXML {
                     break;
                 case XmlPullParser.START_TAG:
                     name = parser.getName();
-                    if (name == "Battle"){
+                    if (name.equals("Battle")){
                         lb.setBattle(Integer.parseInt(parser.nextText()));
                     } 
-                    else if (name == "Scenario"){
+                    else if (name.equals("Scenario")){
                         lb.setScenario(Integer.parseInt(parser.nextText()));
                     } 
-                    else if (name == "Turn"){
+                    else if (name.equals("Turn")){
                         lb.setTurn(Integer.parseInt(parser.nextText()));
                     } 
-                    else if (name == "Phase"){
+                    else if (name.equals("Phase")){
                         lb.setPhase(Integer.parseInt(parser.nextText()));
                     } 
                     break;
@@ -99,7 +98,6 @@ public class LbRepositoryXML {
     
     private static String serializeXml() throws IOException
     {
-        
         XmlSerializer xmlSerializer = Xml.newSerializer();
         StringWriter writer = new StringWriter();
 

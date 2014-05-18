@@ -30,10 +30,10 @@ public class Game {
 		"Sovereign: Readiness Recovery"
 	};
 	
-	public Game(Battle battle, Scenario scenario, Lb saved) {
-		battle = battle;
-		scenario = scenario;
-		saved = saved;
+	public Game(Battle b, Scenario s, Lb sv) {
+		battle = b;
+		scenario = s;
+		saved = sv;
 		if (saved.getBattle() != battle.getId() || saved.getScenario() != scenario.getId())
 			saved.reset(battle, scenario);
 	}

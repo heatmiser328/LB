@@ -1,12 +1,12 @@
 package ica.LB;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 import android.widget.ExpandableListView.OnChildClickListener;
 
-import java.io.IOException;
 import java.util.*;
 
 public class MainActivity extends Activity {
@@ -14,18 +14,18 @@ public class MainActivity extends Activity {
     private ica.LB.Adapters.BattleListAdapter battleList;
     private List<ica.LB.Core.Battle> battles;
     private ExpandableListView battleListView;
+    private Activity me;
 
     /**
      * Called when the activity is first created.
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        me = this;
+        
         super.onCreate(savedInstanceState);
 
-        try {
-            ica.LB.Core.LbManager.initialize(getApplicationContext().getAssets().open(ica.LB.Core.LbManager.getBattlesAssetsPath()));
-        } catch (IOException e) {
-        }
+        ica.LB.Core.LbManager.initialize(getApplicationContext());
 
         setContentView(R.layout.main);
         
@@ -45,24 +45,21 @@ public class MainActivity extends Activity {
 		//Hook up our adapter to our ListView
 		battleListView.setAdapter(battleList);
 
-		battleListView.setOnChildClickListener(listItemClicked);
-	}
-   
-    private OnChildClickListener listItemClicked =  new OnChildClickListener() {
-        public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+		battleListView.setOnChildClickListener(new OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
-            /*
-            Intent battleDetail = new Intent (this, typeof(BattleActivity));
-            Battle battle = battles.get(groupPosition);
-            Scenario scenario = battle.getScenarios().get(childPosition);
-			battleDetail.putExtra("Battle", battle.getId());
-			battleDetail.putExtra ("Scenario", scenario.getId());
+                Intent battleDetail = new Intent (me, BattleActivity.class);
+                ica.LB.Core.Battle battle = battles.get(groupPosition);
+                ica.LB.Core.Scenario scenario = battle.getScenarios().get(childPosition);
+			    battleDetail.putExtra("Battle", battle.getId());
+			    battleDetail.putExtra ("Scenario", scenario.getId());
 
-			startActivity (battleDetail);
-			*/
+			    startActivity (battleDetail);
         
-            return false;
-        }
-    };    
-
+                return true;
+            }
+        
+        });
+	}
 }

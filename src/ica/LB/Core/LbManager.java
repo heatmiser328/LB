@@ -1,5 +1,6 @@
 package ica.LB.Core;
 
+import android.content.Context;
 import java.io.*;
 import java.util.*;
 
@@ -10,12 +11,12 @@ public class LbManager {
 
     private static List<Battle> battles;
 
-	public static String getBattlesAssetsPath() {
-        return BattleRepositoryXML.getDatabaseFilePath();
-	}
-	
-	public static void initialize(InputStream s) {
-		BattleRepositoryXML.load(s);
+	public static void initialize(Context ctx) {
+        try {
+            LbRepositoryXML.initialize(ctx);
+            BattleRepositoryXML.load(ctx.getAssets().open(BattleRepositoryXML.getDatabaseFilePath()));
+        } catch (Exception e) {
+        }
 	}
 		
 	public static Game getGame(int battleid, int scenarioid) {

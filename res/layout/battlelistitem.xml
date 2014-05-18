@@ -10,12 +10,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/textName"
         android:layout_gravity="left"
-        android:background="#ff1469ea" />
+        android:background="#ff1469ea" android:paddingLeft="40dp"/>
     <TextView
         android:text="Small Text"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textPublisher"
-        android:background="#ff6393dc" />
+        android:background="#ff6393dc" android:paddingLeft="40dp"/>
 </LinearLayout>
