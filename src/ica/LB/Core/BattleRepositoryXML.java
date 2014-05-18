@@ -65,52 +65,53 @@ public class BattleRepositoryXML {
                     break;
                 case XmlPullParser.START_TAG:
                     name = parser.getName();
-                    if (name == "Battle"){
+                    if (name.equals("Battle")){
                         currentBattle = new Battle();
                         currentScenario = null;
-                    } 
+                    }
+                    else if (name.equals("Scenario")){
+                        currentScenario = new Scenario();
+                    }
+
                     else if (currentBattle != null && currentScenario == null) {
-                        if (name == "Id"){
+                        if (name.equals("Id")){
                             currentBattle.setId(Integer.parseInt(parser.nextText()));
                         } 
-                        else if (name == "Name"){
+                        else if (name.equals("Name")){
                         	currentBattle.setName(parser.nextText());
                         } 
-                        else if (name == "Publisher"){
+                        else if (name.equals("Publisher")){
                             currentBattle.setPublisher(parser.nextText());
                         } 
-                        else if (name == "Sort"){
+                        else if (name.equals("Sort")){
                             currentBattle.setSort(Integer.parseInt(parser.nextText()));
                         }  
                     }
                     
-                    else if (name == "Product"){
-                        currentScenario = new Scenario();
-                    } 
                     else if (currentBattle != null && currentScenario != null) {
-                        if (name == "Id") {
+                        if (name.equals("Id")) {
                             currentScenario.setId(Integer.parseInt(parser.nextText()));
-                        } else if (name == "Name") {
+                        } else if (name.equals("Name")) {
                             currentScenario.setName(parser.nextText());
-                        } else if (name == "StartYear") {
+                        } else if (name.equals("StartYear")) {
                             currentScenario.setStartYear(Integer.parseInt(parser.nextText()));
-                        } else if (name == "StartMonth") {
+                        } else if (name.equals("StartMonth")) {
                             currentScenario.setStartMonth(Integer.parseInt(parser.nextText()));
-                        } else if (name == "StartDay") {
+                        } else if (name.equals("StartDay")) {
                             currentScenario.setStartDay(Integer.parseInt(parser.nextText()));
-                        } else if (name == "StartHour") {
+                        } else if (name.equals("StartHour")) {
                             currentScenario.setStartHour(Integer.parseInt(parser.nextText()));
-                        } else if (name == "StartMinute") {
+                        } else if (name.equals("StartMinute")) {
                             currentScenario.setStartMinute(Integer.parseInt(parser.nextText()));
-                        } else if (name == "EndYear") {
+                        } else if (name.equals("EndYear")) {
                             currentScenario.setEndYear(Integer.parseInt(parser.nextText()));
-                        } else if (name == "EndMonth") {
+                        } else if (name.equals("EndMonth")) {
                             currentScenario.setEndMonth(Integer.parseInt(parser.nextText()));
-                        } else if (name == "EndDay") {
+                        } else if (name.equals("EndDay")) {
                             currentScenario.setEndDay(Integer.parseInt(parser.nextText()));
-                        } else if (name == "EndHour") {
+                        } else if (name.equals("EndHour")) {
                             currentScenario.setEndHour(Integer.parseInt(parser.nextText()));
-                        } else if (name == "EndMinute") {
+                        } else if (name.equals("EndMinute")) {
                             currentScenario.setEndMinute(Integer.parseInt(parser.nextText()));
                         }
                     }
