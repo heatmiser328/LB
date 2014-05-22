@@ -27,9 +27,12 @@ public class BattleActivity extends Activity {
 	private ImageButton btnMorale;
 	private ImageButton btnGeneral;
 	private ica.LB.Core.Game game;
+    private Activity me;
 
     @Override
     public void onCreate (Bundle bundle) {
+        me = this;
+        
         super.onCreate(bundle);
 
         Intent intent = getIntent();
@@ -128,17 +131,19 @@ public class BattleActivity extends Activity {
 			    save(); 
 			}
 		});        
-        
+
+		btnFire.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent fireDetail = new Intent (me, FireCombatActivity.class);
+                fireDetail.putExtra("Battle", game.getBattle().getId());
+                fireDetail.putExtra ("Scenario", game.getScenario().getId());
+
+                startActivity (fireDetail);
+            }
+        });
+
         /*
-		btnFire.Click += (sender, e) => { 
-
-			var fireDetail = new Intent (this, typeof(FireCombatActivity));
-			fireDetail.PutExtra("Battle", game.Battle.Id);
-			fireDetail.PutExtra ("Scenario", game.Scenario.Id);
-
-			StartActivity (fireDetail);
-		};
-
 		btnMelee.Click += (sender, e) => { 
 
 			var meleeDetail = new Intent (this, typeof(MeleeActivity));

@@ -8,8 +8,7 @@ import java.util.*;
 public class Dice {
 	private ArrayList<Die> dice = new ArrayList<Die>();
 
-	public Dice(int numdice, int low, int high)
-	{
+	public Dice(int numdice, int low, int high) {
 		for (int i=0; i<numdice; i++)
 			addDie(low, high);
 	}
@@ -45,11 +44,11 @@ public class Dice {
 			dice.remove(die);
 	}
     
-	public void Clear() {
+	public void clear() {
 		dice.clear();
 	}
     
-	public void Roll() {
+	public void roll() {
 		for (Die die : dice)
 			die.roll();
 	}
