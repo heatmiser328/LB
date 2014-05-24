@@ -165,16 +165,16 @@ public class BattleActivity extends Activity {
             }
         });
 		
-        /*
-		btnGeneral.Click += (sender, e) => { 
+		btnGeneral.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+			    Intent generalDetail = new Intent (me, GeneralActivity.class);
+			    generalDetail.putExtra("Battle", game.getBattle().getId());
+			    generalDetail.putExtra ("Scenario", game.getScenario().getId());
 
-			var generalDetail = new Intent (this, typeof(GeneralActivity));
-			generalDetail.PutExtra("Battle", game.Battle.Id);
-			generalDetail.PutExtra ("Scenario", game.Scenario.Id);
-
-			StartActivity (generalDetail);
-		};
-		*/
+			    startActivity (generalDetail);
+            }
+        });
         
 		update();
 	}

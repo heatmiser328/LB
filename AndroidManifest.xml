@@ -16,5 +16,6 @@
         <activity android:name=".FireCombatActivity"/>
         <activity android:name=".MeleeCombatActivity"/>
         <activity android:name=".MoraleActivity"/>
+        <activity android:name="GeneralActivity"/>
     </application>
 </manifest>
