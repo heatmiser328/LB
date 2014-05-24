@@ -14,5 +14,6 @@
         </activity>
         <activity android:name=".BattleActivity"/>
         <activity android:name=".FireCombatActivity"/>
+        <activity android:name=".MeleeCombatActivity"/>
     </application>
 </manifest>

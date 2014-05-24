@@ -143,16 +143,18 @@ public class BattleActivity extends Activity {
             }
         });
 
-        /*
-		btnMelee.Click += (sender, e) => { 
+		btnMelee.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+			    Intent meleeDetail = new Intent (me, MeleeCombatActivity.class);
+			    meleeDetail.putExtra("Battle", game.getBattle().getId());
+			    meleeDetail.putExtra ("Scenario", game.getScenario().getId());
 
-			var meleeDetail = new Intent (this, typeof(MeleeActivity));
-			meleeDetail.PutExtra("Battle", game.Battle.Id);
-			meleeDetail.PutExtra ("Scenario", game.Scenario.Id);
-
-			StartActivity (meleeDetail);
-		};
+			    startActivity (meleeDetail);
+            }
+        });
 			
+        /*
 		btnMorale.Click += (sender, e) => { 
 
 			var moraleDetail = new Intent (this, typeof(MoraleActivity));
