@@ -154,16 +154,18 @@ public class BattleActivity extends Activity {
             }
         });
 			
-        /*
-		btnMorale.Click += (sender, e) => { 
+		btnMorale.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+			    Intent moraleDetail = new Intent (me, MoraleActivity.class);
+			    moraleDetail.putExtra("Battle", game.getBattle().getId());
+			    moraleDetail.putExtra ("Scenario", game.getScenario().getId());
 
-			var moraleDetail = new Intent (this, typeof(MoraleActivity));
-			moraleDetail.PutExtra("Battle", game.Battle.Id);
-			moraleDetail.PutExtra ("Scenario", game.Scenario.Id);
-
-			StartActivity (moraleDetail);
-		};
+			    startActivity (moraleDetail);
+            }
+        });
 		
+        /*
 		btnGeneral.Click += (sender, e) => { 
 
 			var generalDetail = new Intent (this, typeof(GeneralActivity));
