@@ -224,7 +224,10 @@ public class MoraleActivity extends Activity {
 	}
 
 	int getMoraleValue() {
-        return Integer.parseInt(editMoraleValue.getText().toString());
+        String v = editMoraleValue.getText().toString();
+        if (!v.isEmpty())
+            return Integer.parseInt(v);
+        return 11;
 	}
 	
 	void modifyDice(int mod) {

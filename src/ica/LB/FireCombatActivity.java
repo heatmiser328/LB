@@ -399,13 +399,22 @@ public class FireCombatActivity extends Activity {
 	}
 
 	double getAttackerValue() {
-        return Double.parseDouble(editAttackerValue.getText().toString());
+        String v = editAttackerValue.getText().toString();
+        if (!v.isEmpty())
+            return Double.parseDouble(v);
+        return 1;           
 	}
 	double getDefenderValue() {
-        return Double.parseDouble(editDefenderValue.getText().toString());
+        String v = editDefenderValue.getText().toString();
+        if (!v.isEmpty())
+            return Double.parseDouble(v);
+        return 1;           
 	}
 	int getDefenderIncrements() {
-        return Integer.parseInt(editDefenderIncr.getText().toString());
+        String v = editDefenderIncr.getText().toString();
+        if (!v.isEmpty())
+            return Integer.parseInt(v);
+        return 1;
 	}
 	
 	double findNearestDefenseValue(double value, boolean neg) {

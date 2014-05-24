@@ -593,25 +593,46 @@ public class MeleeCombatActivity extends Activity {
 	}
 
 	double getAttackerValue() {
-        return Double.parseDouble(editMeleeAttackerValue.getText().toString());
+        String v = editMeleeAttackerValue.getText().toString();
+        if (!v.isEmpty())
+            return Double.parseDouble(v);
+        return 1;           
 	}
 	double getDefenderValue() {
-        return Double.parseDouble(editMeleeDefenderValue.getText().toString());
+        String v = editMeleeDefenderValue.getText().toString();
+        if (!v.isEmpty())
+            return Double.parseDouble(v);
+        return 1;           
 	}
 	int getMeleeIncrements() {
-        return Integer.parseInt(editMeleeIncrValue.getText().toString());
+        String v = editMeleeIncrValue.getText().toString();
+        if (!v.isEmpty())
+            return Integer.parseInt(v);
+        return 1;
 	}
 	int getMeleeLoss() {
-        return Integer.parseInt(editMeleeLossValue.getText().toString());
+        String v = editMeleeLossValue.getText().toString();
+        if (!v.isEmpty())
+            return Integer.parseInt(v);
+        return 1;
 	}
 	int getMeleeValue() {
-        return Integer.parseInt(editMeleeValueValue.getText().toString());
+        String v = editMeleeValueValue.getText().toString();
+        if (!v.isEmpty())
+            return Integer.parseInt(v);
+        return 1;
 	}
 	int getMeleeLance() {
-        return Integer.parseInt(editMeleeLanceValue.getText().toString());
+        String v = editMeleeLanceValue.getText().toString();
+        if (!v.isEmpty())
+            return Integer.parseInt(v);
+        return 1;
 	}
 	double getMeleeTotal() {
-        return Double.parseDouble(editMeleeTotalValue.getText().toString());
+        String v = editMeleeTotalValue.getText().toString();
+        if (!v.isEmpty())
+            return Double.parseDouble(v);
+        return 1;           
 	}
 	
 	void incrementDie(int die) {
