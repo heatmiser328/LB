@@ -2,7 +2,7 @@
 <Battles>
 	<Battle>
 		<Id>1</Id>
-		<Name>Halle</Name>
+		<Name>La Bataille d' Halle</Name>
 		<Publisher>Marshal Enterprises</Publisher>
 		<Sort>0</Sort>
 		<Scenarios>
@@ -52,7 +52,7 @@
 	</Battle>
 	<Battle>
 		<Id>5</Id>
-		<Name>Raszyn</Name>
+		<Name>La Bataille de Raszyn</Name>
 		<Publisher>Marshal Enterprises</Publisher>
 		<Sort>1</Sort>
 		<Scenarios>
@@ -102,7 +102,7 @@
 	</Battle>
 	<Battle>
 		<Id>9</Id>
-		<Name>Leipzig</Name>
+		<Name>La Bataille de Leipzig</Name>
 		<Publisher>Marshal Enterprises</Publisher>
 		<Sort>2</Sort>
 		<Scenarios>
@@ -404,7 +404,7 @@
 	</Battle>
 	<Battle>
 		<Id>31</Id>
-		<Name>Vauchamps</Name>
+		<Name>La Bataille de Vauchamps</Name>
 		<Publisher>Marshal Enterprises / ATO</Publisher>
 		<Sort>3</Sort>
 		<Scenarios>
@@ -452,4 +452,718 @@
 			</Scenario>
 		</Scenarios>
 	</Battle>
+	<Battle>
+		<Id>35</Id>
+		<Name>La Bataille d' Auerstaedt</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>4</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>36</Id>
+				<Name>Historical Battle</Name>
+				<StartYear>1806</StartYear>
+				<StartMonth>10</StartMonth>
+				<StartDay>14</StartDay>
+				<StartHour>06</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1806</EndYear>
+				<EndMonth>10</EndMonth>
+				<EndDay>14</EndDay>
+				<EndHour>19</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>37</Id>
+				<Name>The Duke of Brunswick</Name>
+				<StartYear>1806</StartYear>
+				<StartMonth>10</StartMonth>
+				<StartDay>14</StartDay>
+				<StartHour>10</StartHour>
+				<StartMinute>20</StartMinute>
+				<EndYear>1806</EndYear>
+				<EndMonth>10</EndMonth>
+				<EndDay>14</EndDay>
+				<EndHour>19</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+            
+		</Scenarios>
+	</Battle>
+	<Battle>
+		<Id>38</Id>
+		<Name>La Bataille de Preussesch-Eylau</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>5</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>39</Id>
+				<Name>The Opening Moves</Name>
+				<StartYear>1807</StartYear>
+				<StartMonth>02</StartMonth>
+				<StartDay>07</StartDay>
+				<StartHour>14</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1807</EndYear>
+				<EndMonth>02</EndMonth>
+				<EndDay>07</EndDay>
+				<EndHour>19</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>40</Id>
+				<Name>The Assault of the VII Corps</Name>
+				<StartYear>1807</StartYear>
+				<StartMonth>02</StartMonth>
+				<StartDay>08</StartDay>
+				<StartHour>08</StartHour>
+				<StartMinute>40</StartMinute>
+				<EndYear>1807</EndYear>
+				<EndMonth>02</EndMonth>
+				<EndDay>08</EndDay>
+				<EndHour>11</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>41</Id>
+				<Name>Murat's Charge</Name>
+				<StartYear>1807</StartYear>
+				<StartMonth>02</StartMonth>
+				<StartDay>08</StartDay>
+				<StartHour>10</StartHour>
+				<StartMinute>40</StartMinute>
+				<EndYear>1807</EndYear>
+				<EndMonth>02</EndMonth>
+				<EndDay>08</EndDay>
+				<EndHour>12</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>42</Id>
+				<Name>Grand Battle</Name>
+				<StartYear>1807</StartYear>
+				<StartMonth>02</StartMonth>
+				<StartDay>08</StartDay>
+				<StartHour>07</StartHour>
+				<StartMinute>40</StartMinute>
+				<EndYear>1807</EndYear>
+				<EndMonth>02</EndMonth>
+				<EndDay>08</EndDay>
+				<EndHour>20</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>43</Id>
+				<Name>La Bataille de Preussisch-Eylau</Name>
+				<StartYear>1807</StartYear>
+				<StartMonth>02</StartMonth>
+				<StartDay>07</StartDay>
+				<StartHour>14</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1807</EndYear>
+				<EndMonth>02</EndMonth>
+				<EndDay>08</EndDay>
+				<EndHour>22</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+		</Scenarios>
+	</Battle>
+	<Battle>
+		<Id>44</Id>
+		<Name>La Bataille de Talavera</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>6</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>45</Id>
+				<Name>Ruffin's Night Attack</Name>
+				<StartYear>1809</StartYear>
+				<StartMonth>07</StartMonth>
+				<StartDay>27</StartDay>
+				<StartHour>20</StartHour>
+				<StartMinute>20</StartMinute>
+				<EndYear>1809</EndYear>
+				<EndMonth>07</EndMonth>
+				<EndDay>28</EndDay>
+				<EndHour>01</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>46</Id>
+				<Name>Marshal Victor's Morning Attack</Name>
+				<StartYear>1809</StartYear>
+				<StartMonth>07</StartMonth>
+				<StartDay>28</StartDay>
+				<StartHour>05</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1809</EndYear>
+				<EndMonth>07</EndMonth>
+				<EndDay>28</EndDay>
+				<EndHour>09</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>47</Id>
+				<Name>Marshal Jourdan's Plan</Name>
+				<StartYear>1809</StartYear>
+				<StartMonth>07</StartMonth>
+				<StartDay>28</StartDay>
+				<StartHour>09</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1809</EndYear>
+				<EndMonth>07</EndMonth>
+				<EndDay>28</EndDay>
+				<EndHour>17</EndHour>
+				<EndMinute>20</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>48</Id>
+				<Name>The Afternoon Assault</Name>
+				<StartYear>1809</StartYear>
+				<StartMonth>07</StartMonth>
+				<StartDay>28</StartDay>
+				<StartHour>11</StartHour>
+				<StartMinute>40</StartMinute>
+				<EndYear>1809</EndYear>
+				<EndMonth>07</EndMonth>
+				<EndDay>28</EndDay>
+				<EndHour>20</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>49</Id>
+				<Name>La Bataille d'Espagnol-Talavera</Name>
+				<StartYear>1809</StartYear>
+				<StartMonth>07</StartMonth>
+				<StartDay>28</StartDay>
+				<StartHour>05</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1809</EndYear>
+				<EndMonth>07</EndMonth>
+				<EndDay>28</EndDay>
+				<EndHour>20</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+		</Scenarios>
+	</Battle>
+	<Battle>
+		<Id>50</Id>
+		<Name>La Bataille d'Albuera</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>7</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>51</Id>
+				<Name>Soult Attacks Beresford</Name>
+				<StartYear>1811</StartYear>
+				<StartMonth>05</StartMonth>
+				<StartDay>16</StartDay>
+				<StartHour>08</StartHour>
+				<StartMinute>40</StartMinute>
+				<EndYear>1811</EndYear>
+				<EndMonth>05</EndMonth>
+				<EndDay>16</EndDay>
+				<EndHour>21</EndHour>
+				<EndMinute>20</EndMinute>
+			</Scenario>
+		</Scenarios>
+	</Battle>
+	<Battle>
+		<Id>52</Id>
+		<Name>La Bataille de Ligny</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>8</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>53</Id>
+				<Name>Girard's Assault</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>16</StartDay>
+				<StartHour>14</StartHour>
+				<StartMinute>40</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>16</EndDay>
+				<EndHour>18</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>54</Id>
+				<Name>The Assault on Ligny</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>16</StartDay>
+				<StartHour>14</StartHour>
+				<StartMinute>20</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>16</EndDay>
+				<EndHour>17</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>55</Id>
+				<Name>Theilman's Feint</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>16</StartDay>
+				<StartHour>17</StartHour>
+				<StartMinute>40</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>16</EndDay>
+				<EndHour>19</EndHour>
+				<EndMinute>20</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>56</Id>
+				<Name>The Grand Battle</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>16</StartDay>
+				<StartHour>13</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>16</EndDay>
+				<EndHour>22</EndHour>
+				<EndMinute>20</EndMinute>
+			</Scenario>
+		</Scenarios>
+	</Battle>
+	<Battle>
+		<Id>57</Id>
+		<Name>La Bataille des Quatre Bras</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>8</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>58</Id>
+				<Name>Historical Battle</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>16</StartDay>
+				<StartHour>11</StartHour>
+				<StartMinute>20</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>16</EndDay>
+				<EndHour>21</EndHour>
+				<EndMinute>20</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>59</Id>
+				<Name>Optional Start</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>16</StartDay>
+				<StartHour>14</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>16</EndDay>
+				<EndHour>21</EndHour>
+				<EndMinute>20</EndMinute>
+			</Scenario>
+		</Scenarios>
+	</Battle>
+	<Battle>
+		<Id>60</Id>
+		<Name>La Bataille de Mont St. Jean</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>9</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>61</Id>
+				<Name>Chateuu Goumont</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>18</StartDay>
+				<StartHour>11</StartHour>
+				<StartMinute>20</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>18</EndDay>
+				<EndHour>20</EndHour>
+				<EndMinute>20</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>62</Id>
+				<Name>The Grand Battery</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>18</StartDay>
+				<StartHour>13</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>18</EndDay>
+				<EndHour>13</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>63</Id>
+				<Name>Papelotte</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>18</StartDay>
+				<StartHour>13</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>18</EndDay>
+				<EndHour>22</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>64</Id>
+				<Name>La Haye Saint</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>18</StartDay>
+				<StartHour>13</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>18</EndDay>
+				<EndHour>18</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>65</Id>
+				<Name>Plancenoit</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>18</StartDay>
+				<StartHour>16</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>18</EndDay>
+				<EndHour>22</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>66</Id>
+				<Name>Grand Battle</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>18</StartDay>
+				<StartHour>11</StartHour>
+				<StartMinute>20</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>18</EndDay>
+				<EndHour>22</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+		</Scenarios>
+	</Battle>
+	<Battle>
+		<Id>67</Id>
+		<Name>La Bataille de Wavre</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>10</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>68</Id>
+				<Name>Historical A</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>18</StartDay>
+				<StartHour>15</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>19</EndDay>
+				<EndHour>10</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>69</Id>
+				<Name>Historical B</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>19</StartDay>
+				<StartHour>04</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>19</EndDay>
+				<EndHour>12</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>70</Id>
+				<Name>Historical C</Name>
+				<StartYear>1815</StartYear>
+				<StartMonth>06</StartMonth>
+				<StartDay>18</StartDay>
+				<StartHour>04</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1815</EndYear>
+				<EndMonth>06</EndMonth>
+				<EndDay>18</EndDay>
+				<EndHour>15</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+		</Scenarios>
+	</Battle>
+	<Battle>
+		<Id>71</Id>
+		<Name>La Bataille de Corunna-Espagnol</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>11</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>72</Id>
+				<Name>La Bataille de Piedralonga</Name>
+				<StartYear>1809</StartYear>
+				<StartMonth>01</StartMonth>
+				<StartDay>15</StartDay>
+				<StartHour>11</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1809</EndYear>
+				<EndMonth>01</EndMonth>
+				<EndDay>15</EndDay>
+				<EndHour>15</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>73</Id>
+				<Name>La Bataille des Porte des Corruna</Name>
+				<StartYear>1809</StartYear>
+				<StartMonth>01</StartMonth>
+				<StartDay>18</StartDay>
+				<StartHour>07</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1809</EndYear>
+				<EndMonth>01</EndMonth>
+				<EndDay>18</EndDay>
+				<EndHour>12</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>74</Id>
+				<Name>Main Battle</Name>
+				<StartYear>1809</StartYear>
+				<StartMonth>01</StartMonth>
+				<StartDay>16</StartDay>
+				<StartHour>12</StartHour>
+				<StartMinute>20</StartMinute>
+				<EndYear>1809</EndYear>
+				<EndMonth>01</EndMonth>
+				<EndDay>16</EndDay>
+				<EndHour>19</EndHour>
+				<EndMinute>20</EndMinute>
+			</Scenario>
+		</Scenarios>
+	</Battle>
+	<Battle>
+		<Id>75</Id>
+		<Name>La Bataille de Luetzen</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>11</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>76</Id>
+				<Name>Bluecher Impetuous</Name>
+				<StartYear>1813</StartYear>
+				<StartMonth>05</StartMonth>
+				<StartDay>02</StartDay>
+				<StartHour>11</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1813</EndYear>
+				<EndMonth>05</EndMonth>
+				<EndDay>02</EndDay>
+				<EndHour>12</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>77</Id>
+				<Name>Bluecher Wary</Name>
+				<StartYear>1813</StartYear>
+				<StartMonth>05</StartMonth>
+				<StartDay>02</StartDay>
+				<StartHour>11</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1813</EndYear>
+				<EndMonth>05</EndMonth>
+				<EndDay>02</EndDay>
+				<EndHour>13</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>78</Id>
+				<Name>Bluecher Circumspect</Name>
+				<StartYear>1813</StartYear>
+				<StartMonth>05</StartMonth>
+				<StartDay>02</StartDay>
+				<StartHour>11</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1813</EndYear>
+				<EndMonth>05</EndMonth>
+				<EndDay>02</EndDay>
+				<EndHour>13</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>79</Id>
+				<Name>Grand Battle</Name>
+				<StartYear>1813</StartYear>
+				<StartMonth>05</StartMonth>
+				<StartDay>02</StartDay>
+				<StartHour>11</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1813</EndYear>
+				<EndMonth>05</EndMonth>
+				<EndDay>02</EndDay>
+				<EndHour>20</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+		</Scenarios>
+	</Battle>
+	<Battle>
+		<Id>80</Id>
+		<Name>La Bataille d'Orthez</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>12</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>81</Id>
+				<Name>Four on Four</Name>
+				<StartYear>1814</StartYear>
+				<StartMonth>02</StartMonth>
+				<StartDay>27</StartDay>
+				<StartHour>08</StartHour>
+				<StartMinute>40</StartMinute>
+				<EndYear>1814</EndYear>
+				<EndMonth>02</EndMonth>
+				<EndDay>27</EndDay>
+				<EndHour>11</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>82</Id>
+				<Name>The Battle for St. Boes</Name>
+				<StartYear>1814</StartYear>
+				<StartMonth>02</StartMonth>
+				<StartDay>27</StartDay>
+				<StartHour>08</StartHour>
+				<StartMinute>40</StartMinute>
+				<EndYear>1814</EndYear>
+				<EndMonth>02</EndMonth>
+				<EndDay>27</EndDay>
+				<EndHour>13</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>83</Id>
+				<Name>Grand Battle</Name>
+				<StartYear>1814</StartYear>
+				<StartMonth>02</StartMonth>
+				<StartDay>27</StartDay>
+				<StartHour>08</StartHour>
+				<StartMinute>40</StartMinute>
+				<EndYear>1814</EndYear>
+				<EndMonth>02</EndMonth>
+				<EndDay>27</EndDay>
+				<EndHour>17</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+		</Scenarios>
+	</Battle>
+	<Battle>
+		<Id>83</Id>
+		<Name>La Bataille de la Moscowa</Name>
+		<Publisher>Clash of Arms</Publisher>
+		<Sort>13</Sort>
+		<Scenarios>
+			<Scenario>
+				<Id>84</Id>
+				<Name>Schevardino</Name>
+				<StartYear>1812</StartYear>
+				<StartMonth>09</StartMonth>
+				<StartDay>05</StartDay>
+				<StartHour>15</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1812</EndYear>
+				<EndMonth>09</EndMonth>
+				<EndDay>05</EndDay>
+				<EndHour>21</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>85</Id>
+				<Name>Grand Battle</Name>
+				<StartYear>1812</StartYear>
+				<StartMonth>09</StartMonth>
+				<StartDay>07</StartDay>
+				<StartHour>06</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1812</EndYear>
+				<EndMonth>09</EndMonth>
+				<EndDay>07</EndDay>
+				<EndHour>21</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>86</Id>
+				<Name>The Bagration Fleches</Name>
+				<StartYear>1812</StartYear>
+				<StartMonth>09</StartMonth>
+				<StartDay>07</StartDay>
+				<StartHour>06</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1812</EndYear>
+				<EndMonth>09</EndMonth>
+				<EndDay>07</EndDay>
+				<EndHour>12</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>87</Id>
+				<Name>The Great Redoubt</Name>
+				<StartYear>1812</StartYear>
+				<StartMonth>09</StartMonth>
+				<StartDay>07</StartDay>
+				<StartHour>09</StartHour>
+				<StartMinute>40</StartMinute>
+				<EndYear>1812</EndYear>
+				<EndMonth>09</EndMonth>
+				<EndDay>07</EndDay>
+				<EndHour>16</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>88</Id>
+				<Name>Utitsa</Name>
+				<StartYear>1812</StartYear>
+				<StartMonth>09</StartMonth>
+				<StartDay>07</StartDay>
+				<StartHour>09</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1812</EndYear>
+				<EndMonth>09</EndMonth>
+				<EndDay>07</EndDay>
+				<EndHour>17</EndHour>
+				<EndMinute>00</EndMinute>
+			</Scenario>
+			<Scenario>
+				<Id>89</Id>
+				<Name>Barclay in Command</Name>
+				<StartYear>1812</StartYear>
+				<StartMonth>09</StartMonth>
+				<StartDay>07</StartDay>
+				<StartHour>06</StartHour>
+				<StartMinute>00</StartMinute>
+				<EndYear>1812</EndYear>
+				<EndMonth>09</EndMonth>
+				<EndDay>07</EndDay>
+				<EndHour>21</EndHour>
+				<EndMinute>40</EndMinute>
+			</Scenario>
+		</Scenarios>
+	</Battle>
+    
 </Battles>

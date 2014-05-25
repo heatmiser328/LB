@@ -36,5 +36,5 @@
         android:layout_toRightOf="@+id/titleSubBattleName"
         android:textColor="#ffff0019"
         android:paddingLeft="5dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="bottom|center" />
 </RelativeLayout>
