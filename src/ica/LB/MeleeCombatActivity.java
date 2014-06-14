@@ -111,7 +111,7 @@ public class MeleeCombatActivity extends Activity {
 		btnMeleeAttackerReset  = (Button)findViewById(R.id.btnMeleeAttackerReset	);
 		
 		btnMeleeDefenderPrev   = (Button)findViewById(R.id.btnMeleeDefenderPrev	);
-		btnMeleeAttackerNext   = (Button)findViewById(R.id.btnMeleeAttackerNext	);
+		btnMeleeDefenderNext   = (Button)findViewById(R.id.btnMeleeDefenderNext	);
 		editMeleeDefenderValue = (EditText)findViewById(R.id.editMeleeDefenderValue);
 		btnMeleeDefenderAdd	   = (Button)findViewById(R.id.btnMeleeDefenderAdd		);
 		btnMeleeDefenderReset  = (Button)findViewById(R.id.btnMeleeDefenderReset	);
