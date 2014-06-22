@@ -1,33 +1,40 @@
 package ica.LB;
 
-import android.app.Activity;
+import android.app.ActionBar;
+import android.app.ActionBar.Tab;
+import android.app.FragmentTransaction;
 import android.content.*;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.*;
+
+import ica.LB.Adapters.TabsPagerAdapter;
 
 /**
  * Created by jcapuano on 5/18/2014.
  */
-public class BattleActivity extends Activity {
-	private ImageView imgBack;
-	private ImageView imgLb;
-	private TextView txtBattleName;
-	private TextView txtScenarioName;
-	private Button btnReset;
+public class BattleActivity extends FragmentActivity implements ActionBar.TabListener {
 	private TextView txtTurn;
 	private Button btnTurnPrev;
 	private Button btnTurnNext;
 	private TextView txtPhase;
 	private Button btnPhasePrev;
 	private Button btnPhaseNext;
-	private ImageButton btnFire;
-	private ImageButton btnMelee;
-	private ImageButton btnMorale;
-	private ImageButton btnGeneral;
+    
+    private ViewPager viewPager;
+	private TabsPagerAdapter mAdapter;
+	private ActionBar actionBar;
+	// Tab titles
+	private String[] tabs = { "Fire", "Melee", "Morale", "General" };
+    
 	private ica.LB.Core.Game game;
-    private Activity me;
+    private FragmentActivity me;
 
     @Override
     public void onCreate (Bundle bundle) {
@@ -36,17 +43,9 @@ public class BattleActivity extends Activity {
         super.onCreate(bundle);
 
         Intent intent = getIntent();
-
 		game = ica.LB.Core.LbManager.getGame(intent.getIntExtra ("Battle", -1), intent.getIntExtra("Scenario", -1));
 
-        setContentView(R.layout.battle);		
-
-		imgBack = (ImageView)findViewById(R.id.titleSubLbBack);
-		imgLb = (ImageView)findViewById(R.id.titleSubLb);
-
-		// title
-		txtBattleName = (TextView)findViewById(R.id.titleSubBattleName);
-		txtScenarioName = (TextView)findViewById(R.id.titleSubScenarioName);
+        setContentView(R.layout.battle);
 
 		// current turn
 		txtTurn = (TextView)findViewById(R.id.textTurn);
@@ -58,44 +57,23 @@ public class BattleActivity extends Activity {
 		btnPhasePrev = (Button)findViewById(R.id.btnPhasePrev);
 		btnPhaseNext = (Button)findViewById(R.id.btnPhaseNext);
 
-		btnReset = (Button)findViewById(R.id.btnReset);
+        // tabs
+		viewPager = (ViewPager) findViewById(R.id.battleViews);
+		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
+		viewPager.setAdapter(mAdapter);
 
-		btnFire = (ImageButton)findViewById(R.id.btnFire);
-		btnMelee = (ImageButton)findViewById(R.id.btnMelee);
-		btnMorale = (ImageButton)findViewById(R.id.btnMorale);
-		btnGeneral = (ImageButton)findViewById(R.id.btnGeneral);
-	}
+        actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        actionBar.setTitle(game.getBattle().getName());
+        actionBar.setSubtitle(game.getScenario().getName());
 
-    @Override
-    public void onResume () {
-        super.onResume();
-
-        imgBack.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-			    navigateUp();
-			}
-		});        
+		// Adding Tabs
+		for (String tab_name : tabs) {
+			actionBar.addTab(actionBar.newTab().setText(tab_name)
+					.setTabListener(this));
+		}
         
-		imgLb.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-			    navigateUp();
-			}
-		});        
-        
-		txtBattleName.setText(game.getBattle().getName());
-		txtScenarioName.setText(game.getScenario().getName());
-
-		btnReset.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-			    game.reset();
-			    update();
-			    save();
-			}
-		});        
-			
 		btnTurnPrev.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -132,53 +110,71 @@ public class BattleActivity extends Activity {
 			}
 		});        
 
-		btnFire.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent fireDetail = new Intent (me, FireCombatActivity.class);
-                fireDetail.putExtra("Battle", game.getBattle().getId());
-                fireDetail.putExtra ("Scenario", game.getScenario().getId());
+		/**
+		 * on swiping the viewpager make respective tab selected
+         * */
+		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
-                startActivity (fireDetail);
-            }
-        });
+			@Override
+			public void onPageSelected(int position) {
+				// on changing the page
+				// make respected tab selected
+				actionBar.setSelectedNavigationItem(position);
+			}
 
-		btnMelee.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-			    Intent meleeDetail = new Intent (me, MeleeCombatActivity.class);
-			    meleeDetail.putExtra("Battle", game.getBattle().getId());
-			    meleeDetail.putExtra ("Scenario", game.getScenario().getId());
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+			}
 
-			    startActivity (meleeDetail);
-            }
-        });
-			
-		btnMorale.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-			    Intent moraleDetail = new Intent (me, MoraleActivity.class);
-			    moraleDetail.putExtra("Battle", game.getBattle().getId());
-			    moraleDetail.putExtra ("Scenario", game.getScenario().getId());
-
-			    startActivity (moraleDetail);
-            }
-        });
-		
-		btnGeneral.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-			    Intent generalDetail = new Intent (me, GeneralActivity.class);
-			    generalDetail.putExtra("Battle", game.getBattle().getId());
-			    generalDetail.putExtra ("Scenario", game.getScenario().getId());
-
-			    startActivity (generalDetail);
-            }
-        });
-        
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+			}
+		});
 		update();
 	}
-	
+
+    @Override
+    public void onResume () {
+        super.onResume();
+	}
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.battle, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Take appropriate action for each action item click
+        switch (item.getItemId()) {
+            case R.id.battleReset:
+                game.reset();
+                update();
+                save();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {
+	}
+
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		// on tab selected
+		// show respected fragment view
+        viewPager.setCurrentItem(tab.getPosition());
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+	}
+        
     private void update() {
 		txtTurn.setText(game.getCurrentTurn());
 		txtPhase.setText(game.getCurrentPhase());
@@ -190,9 +186,4 @@ public class BattleActivity extends Activity {
         } catch(Exception e) {
         }
 	}
-
-    private void navigateUp() {
-		startActivity(new Intent(this, MainActivity.class));
-	}
-
 }

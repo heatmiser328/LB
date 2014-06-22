@@ -1,5 +1,6 @@
 package ica.LB;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,6 +29,10 @@ public class MainActivity extends Activity {
         ica.LB.Core.LbManager.initialize(getApplicationContext());
 
         setContentView(R.layout.main);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(R.string.titleLaBat);
+        actionBar.setSubtitle(R.string.titleAsst);
         
 		//Find our controls
 		battleListView = (ExpandableListView)findViewById(R.id.listBattles);

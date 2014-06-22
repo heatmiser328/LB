@@ -6,9 +6,6 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-        <include
-            android:id="@+id/includeFireTitlebar"
-            layout="@layout/subtitlebar" />
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25dp"
@@ -19,7 +16,6 @@
             android:weightSum="1.0"
             android:id="@+id/layoutFireAttackerDefender">
             <LinearLayout
-                android:background="@drawable/border"
                 android:orientation="vertical"
                 android:minWidth="25dp"
                 android:minHeight="25dp"
@@ -122,7 +118,6 @@
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
-                android:background="@drawable/border"
                 android:orientation="vertical"
                 android:minWidth="25dp"
                 android:minHeight="25dp"
@@ -223,7 +218,6 @@
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
-            android:background="@drawable/border"
             android:orientation="vertical"
             android:minWidth="25dp"
             android:minHeight="25dp"
@@ -312,7 +306,6 @@
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
-            android:background="@drawable/border"
             android:orientation="vertical"
             android:minWidth="25dp"
             android:minHeight="25dp"

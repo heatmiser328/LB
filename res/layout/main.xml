@@ -3,9 +3,6 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <include
-        android:id="@+id/includeMainTitlebar"
-        layout="@layout/maintitlebar" />
     <ExpandableListView
         android:id="@+id/listBattles"
         android:minWidth="25px"

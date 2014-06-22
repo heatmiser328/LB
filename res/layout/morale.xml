@@ -6,9 +6,6 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
-        <include
-            android:id="@+id/includeMoraleTitlebar"
-            layout="@layout/subtitlebar" />
         <LinearLayout
             android:id="@+id/layoutMoraleValue"
             android:orientation="horizontal"
