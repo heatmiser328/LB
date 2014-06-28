@@ -192,6 +192,28 @@ public class MeleeCombatFragment extends Fragment {
 			        updateResults();
                 }
             });
+            
+		    btnMeleeAttackerAdd.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        double value = getAttackerValue();
+                    value += getMeleeTotal();
+			        editMeleeAttackerValue.setText(Double.toString(value));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            
+		    btnMeleeAttackerReset.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editMeleeAttackerValue.setText("0");
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            
+            
 		    // defender
 		    btnMeleeDefenderPrev.setOnClickListener(new OnClickListener() {
 			    @Override
@@ -224,6 +246,25 @@ public class MeleeCombatFragment extends Fragment {
 			        updateResults();
                 }
             });
+		    btnMeleeDefenderAdd.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        double value = getDefenderValue();
+                    value += getMeleeTotal();
+			        editMeleeDefenderValue.setText(Double.toString(value));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            
+		    btnMeleeDefenderReset.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editMeleeDefenderValue.setText("0");
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
 		
 		    spinMeleeOdds.setOnItemSelectedListener(new OnItemSelectedListener() {
                 public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -438,67 +479,31 @@ public class MeleeCombatFragment extends Fragment {
 		    btnMeleeMods13.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        double value = getMeleeTotal();
-			        if (btnMeleeMods13.isChecked())  {
-				        value /= 3;
-			        }
-			        else {
-				        value *= 3;
-			        }
-			        editMeleeTotalValue.setText(Double.toString(value));
+			        updateUnit();
 			    }
 		    });
 		    btnMeleeMods12.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        double value = getMeleeTotal();
-			        if (btnMeleeMods12.isChecked()) {
-				        value /= 2;
-			        }
-			        else {
-				        value *= 2;
-			        }
-			        editMeleeTotalValue.setText(Double.toString(value));
+			        updateUnit();
 			    }
 		    });
 		    btnMeleeMods32.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        double value = getMeleeTotal();
-			        if (btnMeleeMods32.isChecked()) {
-				        value *= 1.5;
-			        }
-			        else {
-				        value /= 1.5;
-			        }
-			        editMeleeTotalValue.setText(Double.toString(value));
+			        updateUnit();
 			    }
 		    });
 		    btnMeleeMods2.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        double value = getMeleeTotal();
-			        if (btnMeleeMods2.isChecked()) {
-				        value *= 2;
-			        }
-			        else {
-				        value /= 2;
-			        }
-			        editMeleeTotalValue.setText(Double.toString(value));
+			        updateUnit();
 			    }
 		    });
 		
 		    btnMeleeModsLnc.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        int value = getMeleeLance();
-			        if (btnMeleeModsLnc.isChecked()) {
-				        value *= 2;
-			        }
-			        else {
-				        value /= 2;
-			        }
-			        editMeleeLanceValue.setText(Integer.toString(value));
 			        updateUnit();
 			    }
 		    });
