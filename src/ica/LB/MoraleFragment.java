@@ -44,12 +44,6 @@ public class MoraleFragment extends Fragment {
 	private Morale morale;
 	private PlayAudio audio;
 
-    public MoraleFragment() {
-		dice = new Dice(2, 1, 6);
-		morale = new Morale();
-		audio = new PlayAudio (getActivity());
-    }
-    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (rootView != null) {
@@ -58,6 +52,10 @@ public class MoraleFragment extends Fragment {
                 ((ViewGroup) parent).removeView(rootView);  
         }
         else {
+            dice = new Dice(2, 1, 6);
+            morale = new Morale();
+            audio = new PlayAudio (getActivity());
+
             rootView = inflater.inflate(R.layout.morale, container, false);
     
 		    btnMoralePrev = (Button)rootView.findViewById(R.id.btnMoralePrev);

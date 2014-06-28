@@ -82,13 +82,6 @@ public class MeleeCombatFragment extends Fragment {
 	private Odds odds;
 	private PlayAudio audio;
     
-    public MeleeCombatFragment() {
-		dice = new Dice(5, 1, 6);
-		mc = new MeleeCombat();
-		odds = mc.getDefaultOdds();
-		audio = new PlayAudio (getActivity());
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (rootView != null) {
@@ -97,6 +90,11 @@ public class MeleeCombatFragment extends Fragment {
                 ((ViewGroup) parent).removeView(rootView);  
         }
         else {
+            dice = new Dice(5, 1, 6);
+            mc = new MeleeCombat();
+            odds = mc.getDefaultOdds();
+            audio = new PlayAudio (getActivity());
+
             rootView = inflater.inflate(R.layout.meleecombat, container, false);
     
 		    btnMeleeAttackerPrev   = (Button)rootView.findViewById(R.id.btnMeleeAttackerPrev	);

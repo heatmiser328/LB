@@ -3,6 +3,7 @@ package ica.LB.Helpers;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
+import android.util.Log;
 
 /**
  * Created by jcapuano on 5/18/2014.
@@ -30,6 +31,7 @@ public class PlayAudio {
 			});
 			player.start ();
 		} catch (Exception ex) {
+            Log.e("PlayAudio", "Failed to play audio", ex);
 		}
 	}
 

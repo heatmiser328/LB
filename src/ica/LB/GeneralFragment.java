@@ -34,12 +34,6 @@ public class GeneralFragment extends Fragment {
 	private Dice dice2;
 	private PlayAudio audio;
 
-    public GeneralFragment() {
-		dice1 = new Dice(1, 1, 6);
-		dice2 = new Dice(2, 1, 6);
-		audio = new PlayAudio (getActivity());
-    }
-    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             
@@ -49,8 +43,12 @@ public class GeneralFragment extends Fragment {
                 ((ViewGroup) parent).removeView(rootView);  
         }
         else {
+            dice1 = new Dice(1, 1, 6);
+            dice2 = new Dice(2, 1, 6);
+            audio = new PlayAudio (getActivity());
+
             rootView = inflater.inflate(R.layout.general, container, false);
-		
+
 		    imgGeneral2Die1 = (ImageView)rootView.findViewById (R.id.imgGeneral2Die1);
 		    imgGeneral2Die2 = (ImageView)rootView.findViewById (R.id.imgGeneral2Die2);
 		    btnGeneral2DiceRoll = (Button)rootView.findViewById(R.id.btnGeneral2DiceRoll);

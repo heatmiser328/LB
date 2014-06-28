@@ -62,13 +62,6 @@ public class FireCombatFragment extends Fragment {
 
 	private double[] defenseValues = new double[] {4,6,7,8,9,10,12,14,16,18};
 	
-    public FireCombatFragment() {
-		dice = new Dice(5, 1, 6);
-		fc = new FireCombat();
-		odds = fc.getDefaultOdds();
-		audio = new PlayAudio (getActivity());
-    }
-    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (rootView != null) {
@@ -77,6 +70,11 @@ public class FireCombatFragment extends Fragment {
                 ((ViewGroup) parent).removeView(rootView);  
         }
         else {
+            dice = new Dice(5, 1, 6);
+            fc = new FireCombat();
+            odds = fc.getDefaultOdds();
+            audio = new PlayAudio (getActivity());
+
             rootView = inflater.inflate(R.layout.firecombat, container, false);
 		
 		    // attacker
