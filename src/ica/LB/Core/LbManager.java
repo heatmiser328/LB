@@ -23,10 +23,23 @@ public class LbManager {
 		Battle battle = getBattle(battleid);
 		Scenario scenario = battle.getScenario(scenarioid);
 		Lb saved = LbRepositoryXML.getLb();
-		
+        if (saved == null || saved.getBattle() != battleid && saved.getScenario() != scenarioid) {
+            saved = new Lb(battleid, scenarioid);
+        }
 		return new Game(battle, scenario, saved);
 	}
-	
+
+    public static Game getSaved() {
+        Lb saved = LbRepositoryXML.getLb();
+        if (saved != null && saved.getBattle() > 0 && saved.getScenario() > 0) {
+            Battle battle = getBattle(saved.getBattle());
+            Scenario scenario = battle.getScenario(saved.getScenario());
+
+            return new Game(battle, scenario, saved);
+        }
+        return null;
+    }
+
 	public static void saveGame(Game game) throws FileNotFoundException, IOException
     {
 		LbRepositoryXML.saveLb(game.getSaved());

@@ -32,8 +32,7 @@ public class LbRepositoryXML {
 		return lb;
 	}
 	
-	public static void saveLb(Lb saved) throws FileNotFoundException, IOException
-    {
+	public static void saveLb(Lb saved) throws FileNotFoundException, IOException {
 		if (saved != null)
 			lb = saved;
         LbRepositoryXML.writeXml(context.openFileOutput(LbRepositoryXML.getDatabaseFile(), 0));

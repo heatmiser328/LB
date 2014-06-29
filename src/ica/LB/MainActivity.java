@@ -9,14 +9,18 @@ import android.widget.*;
 import android.widget.ExpandableListView.OnChildClickListener;
 
 import java.util.*;
+import ica.LB.Core.*;
+import ica.LB.Adapters.*;
 
 public class MainActivity extends Activity {
 
-    private ica.LB.Adapters.BattleListAdapter battleList;
-    private List<ica.LB.Core.Battle> battles;
+    private BattleListAdapter battleList;
+    private List<Battle> battles;
     private ExpandableListView battleListView;
     private Activity me;
 
+    private static boolean initial = true;
+    
     /**
      * Called when the activity is first created.
      */
@@ -26,7 +30,7 @@ public class MainActivity extends Activity {
         
         super.onCreate(savedInstanceState);
 
-        ica.LB.Core.LbManager.initialize(getApplicationContext());
+        LbManager.initialize(getApplicationContext());
 
         setContentView(R.layout.main);
 
@@ -36,35 +40,39 @@ public class MainActivity extends Activity {
         
 		//Find our controls
 		battleListView = (ExpandableListView)findViewById(R.id.listBattles);
-    }
-    
-    @Override
-	public void onResume() {
-        super.onResume ();
+        battles = LbManager.getBattles();
 
-		battles = ica.LB.Core.LbManager.getBattles();
+        // create our adapter
+        battleList = new ica.LB.Adapters.BattleListAdapter(this, battles);
 
-		// create our adapter
-		battleList = new ica.LB.Adapters.BattleListAdapter(this, battles);
-					
-		//Hook up our adapter to our ListView
-		battleListView.setAdapter(battleList);
+        //Hook up our adapter to our ListView
+        battleListView.setAdapter(battleList);
 
-		battleListView.setOnChildClickListener(new OnChildClickListener() {
+        battleListView.setOnChildClickListener(new OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
-                Intent battleDetail = new Intent (me, BattleActivity.class);
-                ica.LB.Core.Battle battle = battles.get(groupPosition);
-                ica.LB.Core.Scenario scenario = battle.getScenarios().get(childPosition);
-			    battleDetail.putExtra("Battle", battle.getId());
-			    battleDetail.putExtra ("Scenario", scenario.getId());
+                Battle battle = battles.get(groupPosition);
+                Scenario scenario = battle.getScenarios().get(childPosition);
+                showBattle(battle, scenario);
 
-			    startActivity (battleDetail);
-        
                 return true;
             }
-        
+
         });
-	}
+
+        if (initial) {
+            Game saved = LbManager.getSaved();
+            showBattle(saved.getBattle(), saved.getScenario());
+        }
+        initial = false;
+    }
+    
+    private void showBattle(Battle battle, Scenario scenario) {
+        Intent battleDetail = new Intent (me, BattleActivity.class);
+        battleDetail.putExtra("Battle", battle.getId());
+        battleDetail.putExtra ("Scenario", scenario.getId());
+
+        startActivity (battleDetail);
+    }
 }

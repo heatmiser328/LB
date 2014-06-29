@@ -15,6 +15,11 @@ public class Lb {
 		turn = 1;
 		phase = 0;
 	}
+	public Lb (int battleid, int scenarioid) {
+        super();
+		battle = battleid;
+		scenario = scenarioid;
+	}
 
 	public int getBattle() {
         return battle;
