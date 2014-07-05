@@ -147,37 +147,15 @@ public class BattleActivity extends FragmentActivity implements ActionBar.TabLis
             
                 return true;
             }
-        });        
-                /*
+        });      
+        /*
 		txtTurn.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                switch(event.getAction() & MotionEvent.ACTION_MASK){
-                    case MotionEvent.ACTION_DOWN:
-                        //A pressed gesture has started, the motion contains the initial starting location.
-                        Log.d("Action", "ACTION_DOWN");
-                        break;
-                    case MotionEvent.ACTION_POINTER_DOWN:
-                        //A non-primary pointer has gone down.
-                        Log.d("Action", "ACTION_POINTER_DOWN");
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        //A change has happened during a press gesture (between ACTION_DOWN and ACTION_UP).
-                        Log.d("Action", "ACTION_MOVE");
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        //A pressed gesture has finished.
-                        Log.d("Action", "ACTION_UP");
-                        break;
-                    case MotionEvent.ACTION_POINTER_UP:
-                        //A non-primary pointer has gone up.
-                        Log.d("Action", "ACTION_POINTER_UP");
-                        break;
-                }
                 return turnGestDetector.onTouchEvent(event);
             }
-        });        
-                */
+        });     
+        */
         
         // swipe to change phases
         phaseGestDetector = new GestureDetector(this, new SimpleOnGestureListener() {
