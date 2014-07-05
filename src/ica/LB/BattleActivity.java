@@ -7,11 +7,15 @@ import android.content.*;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.view.GestureDetector;
+import android.view.GestureDetector.SimpleOnGestureListener;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.util.Log;
 import android.widget.*;
 
 import ica.LB.Adapters.TabsPagerAdapter;
@@ -33,13 +37,13 @@ public class BattleActivity extends FragmentActivity implements ActionBar.TabLis
 	// Tab titles
 	private String[] tabs = { "Fire", "Melee", "Morale", "General" };
     
+    private GestureDetector turnGestDetector;
+    private GestureDetector phaseGestDetector;
+    
 	private ica.LB.Core.Game game;
-    private FragmentActivity me;
 
     @Override
     public void onCreate (Bundle bundle) {
-        me = this;
-        
         super.onCreate(bundle);
 
         Intent intent = getIntent();
@@ -77,39 +81,154 @@ public class BattleActivity extends FragmentActivity implements ActionBar.TabLis
 		btnTurnPrev.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-			    game.prevTurn();
-			    update();
-			    save(); 
+			    prevTurn();
 			}
 		});        
         
 		btnTurnNext.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-		    	game.nextTurn();
-			    update();
-			    save(); 
+		    	nextTurn();
 			}
 		});        
 
 		btnPhasePrev.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-    			game.prevPhase();
-			    update();
-			    save(); 
+    			prevPhase();
 			}
 		});        
         
 		btnPhaseNext.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-    			game.nextPhase();
-			    update();
-			    save(); 
+    			nextPhase();
 			}
 		});        
+        
+                
+        // swipe to change turns
+        turnGestDetector = new GestureDetector(this, new SimpleOnGestureListener() {
+            @Override
+            public boolean onScroll(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+                Log.d("Turn Gesture", "Scroll");
+                return false;
+            }
+            @Override
+            public boolean onDown(MotionEvent e1) {
+                Log.d("Turn Gesture", "Down");
+                return false;
+            }
+            @Override
+            public void onLongPress(MotionEvent arg0) {
+                Log.d("Turn Gesture", "LongPress");
+            }
+            @Override
+            public void onShowPress(MotionEvent arg0) {
+                Log.d("Turn Gesture", "ShowPress");
+            }
+            @Override
+            public boolean onSingleTapUp(MotionEvent arg0) {
+                Log.d("Turn Gesture", "SingleTapUp");
+                return false;
+            }        
+            
+            @Override
+            public boolean onFling(MotionEvent start, MotionEvent finish, float velocityX, float velocityY) {
+                Log.d("Turn Gesture", "Fling");
+                if (start.getRawX() < finish.getRawX()) {
+                    Log.d("Turn Fling", "next turn");
+                    nextTurn();
+                }
+                else {
+                    Log.d("Turn Fling", "prev turn");
+                    prevTurn();
+                }
+            
+                return true;
+            }
+        });        
+                /*
+		txtTurn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch(event.getAction() & MotionEvent.ACTION_MASK){
+                    case MotionEvent.ACTION_DOWN:
+                        //A pressed gesture has started, the motion contains the initial starting location.
+                        Log.d("Action", "ACTION_DOWN");
+                        break;
+                    case MotionEvent.ACTION_POINTER_DOWN:
+                        //A non-primary pointer has gone down.
+                        Log.d("Action", "ACTION_POINTER_DOWN");
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        //A change has happened during a press gesture (between ACTION_DOWN and ACTION_UP).
+                        Log.d("Action", "ACTION_MOVE");
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        //A pressed gesture has finished.
+                        Log.d("Action", "ACTION_UP");
+                        break;
+                    case MotionEvent.ACTION_POINTER_UP:
+                        //A non-primary pointer has gone up.
+                        Log.d("Action", "ACTION_POINTER_UP");
+                        break;
+                }
+                return turnGestDetector.onTouchEvent(event);
+            }
+        });        
+                */
+        
+        // swipe to change phases
+        phaseGestDetector = new GestureDetector(this, new SimpleOnGestureListener() {
+            @Override
+            public boolean onScroll(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+                Log.d("Phase Gesture", "Scroll");
+                return false;
+            }
+            @Override
+            public boolean onDown(MotionEvent e1) {
+                Log.d("Phase Gesture", "Down");
+                return false;
+            }
+            @Override
+            public void onLongPress(MotionEvent arg0) {
+                Log.d("Phase Gesture", "LongPress");
+            }
+            @Override
+            public void onShowPress(MotionEvent arg0) {
+                Log.d("Phase Gesture", "ShowPress");
+            }
+            @Override
+            public boolean onSingleTapUp(MotionEvent arg0) {
+                Log.d("Phase Gesture", "SingleTapUp");
+                return false;
+            }        
 
+            @Override
+            public boolean onFling(MotionEvent start, MotionEvent finish, float velocityX, float velocityY) {
+                Log.d("Phase Gesture", "Fling");
+                if (start.getRawX() < finish.getRawX()) {
+                    Log.d("Phase Fling", "next phase");
+                    nextPhase();
+                }                    
+                else {
+                    Log.d("Phase Fling", "prev phase");
+                    prevPhase();
+                }                    
+            
+                return true;
+            }
+        });        
+        /*
+		txtPhase.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return phaseGestDetector.onTouchEvent(event);
+            }
+        });        
+        */
+        
 		/**
 		 * on swiping the viewpager make respective tab selected
          * */
@@ -173,6 +292,61 @@ public class BattleActivity extends FragmentActivity implements ActionBar.TabLis
 
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+	}
+        
+        
+    @Override
+    public boolean onTouchEvent(MotionEvent mev) {
+        if (isPointInsideView(mev.getRawX(), mev.getRawY(), txtTurn))
+            return turnGestDetector.onTouchEvent(mev);
+        else if (isPointInsideView(mev.getRawX(), mev.getRawY(), txtPhase))
+            return phaseGestDetector.onTouchEvent(mev);
+        return false;            
+    }                
+        
+    
+    /**
+     * Determines if given points are inside view
+     * @param x - x coordinate of point
+     * @param y - y coordinate of point
+     * @param view - view object to compare
+     * @return true if the points are within view bounds, false otherwise
+     */
+    private boolean isPointInsideView(float x, float y, View view){
+        int location[] = new int[2];
+        view.getLocationOnScreen(location);
+        int viewX = location[0];
+        int viewY = location[1];
+
+        //point is inside view bounds
+        if(( x > viewX && x < (viewX + view.getWidth())) &&
+                ( y > viewY && y < (viewY + view.getHeight()))){
+            return true;
+        } else {
+            return false;
+        }
+    }                
+        
+    private void prevTurn() {
+		game.prevTurn();
+		update();
+		save(); 
+	}
+    private void nextTurn() {
+		game.nextTurn();
+		update();
+		save(); 
+	}
+
+    private void prevPhase() {
+    	game.prevPhase();
+		update();
+		save(); 
+	}
+    private void nextPhase() {
+    	game.nextPhase();
+		update();
+		save(); 
 	}
         
     private void update() {
