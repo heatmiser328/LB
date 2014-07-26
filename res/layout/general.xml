@@ -9,6 +9,7 @@
         android:layout_height="fill_parent">
         <LinearLayout
             android:id="@+id/layoutGeneral2Dice"
+            android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal">
@@ -46,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/layoutGeneral2Dice"
-            android:id="@+id/moraleSpace0"
+            android:id="@+id/generalSpace0"
             android:minHeight="10dp"
             android:paddingTop="10dp" />
         <LinearLayout
@@ -66,7 +67,7 @@
             <Space
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:id="@+id/moraleSpace1"
+                android:id="@+id/generalSpace1"
                 android:layout_toRightOf="@+id/imgGeneral1Die1"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp" />
@@ -77,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_alignTop="@+id/imgGeneral1Die1"
-                android:layout_toRightOf="@+id/moraleSpace1"
+                android:layout_toRightOf="@+id/generalSpace1"
                 android:background="@drawable/red_button"
                 style="@style/button_text" />
         </LinearLayout>

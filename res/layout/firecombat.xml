@@ -247,21 +247,21 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/layoutFireDice"
+                android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center">
                 <ImageView
                     android:id="@+id/imgFireDie1"
                     android:src="@drawable/die6_whiteblack_1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_gravity="center"
                     android:clickable="true" />
                 <ImageView
                     android:id="@+id/imgFireDie2"
                     android:src="@drawable/die6_redwhite_1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_gravity="center"
                     android:layout_toRightOf="@+id/imgFireDie1"
                     android:clickable="true" />
                 <ImageView
@@ -269,7 +269,6 @@
                     android:src="@drawable/die6_bluewhite_1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_gravity="center"
                     android:layout_toRightOf="@+id/imgFireDie2"
                     android:clickable="true" />
                 <ImageView
@@ -277,7 +276,6 @@
                     android:src="@drawable/die6_blackwhite_1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_gravity="center"
                     android:layout_toRightOf="@+id/imgFireDie3"
                     android:clickable="true" />
                 <ImageView
@@ -285,7 +283,6 @@
                     android:src="@drawable/die6_blackred_1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_gravity="center"
                     android:layout_toRightOf="@+id/imgFireDie4"
                     android:clickable="true" />
                 <Button

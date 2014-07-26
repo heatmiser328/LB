@@ -187,8 +187,10 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/layoutMeleeDice"
+                android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center">
                 <ImageView
                     android:id="@+id/imgMeleeDie1"
                     android:src="@drawable/die6_whiteblack_1"
