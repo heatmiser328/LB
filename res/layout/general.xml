@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dice="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <LinearLayout
@@ -10,24 +11,20 @@
             android:id="@+id/layoutGeneral2Dice"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:weightSum="1.0"
             android:gravity="center_horizontal">
             <ImageView
                 android:id="@+id/imgGeneral2Die1"
-                android:src="@drawable/whiteb1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15"
-                android:layout_gravity="center"
+                android:src="@drawable/die6_whiteblack_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:clickable="true"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp" />
             <ImageView
                 android:id="@+id/imgGeneral2Die2"
-                android:src="@drawable/redw1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15"
+                android:src="@drawable/die6_redwhite_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_alignTop="@+id/imgGeneral2Die1"
                 android:layout_toRightOf="@+id/imgGeneral2Die1"
@@ -37,9 +34,8 @@
             <Button
                 android:id="@+id/btnGeneral2DiceRoll"
                 android:text="Roll"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight=".25"
                 android:layout_gravity="center"
                 android:layout_alignTop="@+id/imgGeneral2Die1"
                 android:layout_toRightOf="@+id/imgGeneral2Die2"
@@ -57,22 +53,19 @@
             android:id="@+id/layoutGeneral1Dice"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:weightSum="1.0"
             android:gravity="center_horizontal">
             <ImageView
                 android:id="@+id/imgGeneral1Die1"
-                android:src="@drawable/blue1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15"
+                android:src="@drawable/die6_bluewhite_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:clickable="true"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp" />
             <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:id="@+id/moraleSpace1"
                 android:layout_toRightOf="@+id/imgGeneral1Die1"
                 android:layout_marginLeft="2dp"
@@ -80,9 +73,8 @@
             <Button
                 android:id="@+id/btnGeneral1DiceRoll"
                 android:text="Roll"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight=".25"
                 android:layout_gravity="center"
                 android:layout_alignTop="@+id/imgGeneral1Die1"
                 android:layout_toRightOf="@+id/moraleSpace1"

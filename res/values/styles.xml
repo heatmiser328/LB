@@ -17,11 +17,6 @@
         <item name="android:textColor">@color/red</item>
     </style>
 
-
-    <color name="red">#ef4444</color>
-    <color name="blue">#050DFA</color>
-    <color name="white">#ffffff</color>
-
     <style name="MainTitleBarStyle">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">45dp</item>

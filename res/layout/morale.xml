@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dice="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <LinearLayout
@@ -55,34 +56,32 @@
             android:layout_height="wrap_content"
             android:weightSum="1.0"
             android:gravity="center_horizontal">
+            
             <ImageView
                 android:id="@+id/imgMoraleDie1"
-                android:src="@drawable/whiteb1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15"
+                android:src="@drawable/die6_whiteblack_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:clickable="true"
+                android:clickable="true" 
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp" />
             <ImageView
                 android:id="@+id/imgMoraleDie2"
-                android:src="@drawable/redw1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15"
+                android:src="@drawable/die6_redwhite_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_alignTop="@+id/imgMoraleDie1"
                 android:layout_toRightOf="@+id/imgMoraleDie1"
-                android:clickable="true"
+                android:clickable="true" 
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp" />
             <Button
                 android:id="@+id/btnMoraleDiceRoll"
                 android:text="Roll"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight=".25"
                 android:layout_gravity="center"
                 android:layout_alignTop="@+id/imgMoraleDie1"
                 android:layout_toRightOf="@+id/imgMoraleDie2"

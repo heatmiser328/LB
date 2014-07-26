@@ -17,7 +17,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 
 import ica.LB.MeleeCalcDialog.OnMeleeCalcFinishListener;
 import ica.LB.Core.*;
-import ica.LB.Helpers.*;
+import com.ica.dice.*;
 
 /**
  * Created by jcapuano on 5/22/2014.
@@ -244,7 +244,7 @@ public class MeleeCombatFragment extends Fragment {
 		    imgMeleeDie1.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(1);
+                    dice.increment(0);
 			        displayDice();
 			        updateResults();
 			    }
@@ -252,7 +252,7 @@ public class MeleeCombatFragment extends Fragment {
 		    imgMeleeDie2.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(2);
+                    dice.increment(1);
 			        displayDice();
 			        updateResults();
 			    }
@@ -260,7 +260,7 @@ public class MeleeCombatFragment extends Fragment {
 		    imgMeleeDie3.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(3);
+                    dice.increment(2);
 			        displayDice();
 			        updateResults();
 			    }
@@ -268,7 +268,7 @@ public class MeleeCombatFragment extends Fragment {
 		    imgMeleeDie4.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(4);
+                    dice.increment(3);
 			        displayDice();
 			        updateResults();
 			    }
@@ -276,7 +276,7 @@ public class MeleeCombatFragment extends Fragment {
 		    imgMeleeDie5.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(5);
+                    dice.increment(4);
 			        displayDice();
 			        updateResults();
 			    }
@@ -291,7 +291,6 @@ public class MeleeCombatFragment extends Fragment {
 			        updateResults();
 			    }
 		    });
-            
 		
 		    displayOdds();
 		    displayDice();
@@ -328,11 +327,11 @@ public class MeleeCombatFragment extends Fragment {
 	}
 
 	void displayDice() {
-		imgMeleeDie1.setImageResource(DiceResources.getWhiteBlack(dice.getDie(0)));
-		imgMeleeDie2.setImageResource(DiceResources.getRedWhite(dice.getDie(1)));
-		imgMeleeDie3.setImageResource(DiceResources.getBlue(dice.getDie(2)));
-		imgMeleeDie4.setImageResource(DiceResources.getBlackWhite(dice.getDie(3)));
-		imgMeleeDie5.setImageResource(DiceResources.getBlackRed(dice.getDie(4)));
+        dice.set(0, DieColor.WHITE_BLACK, imgMeleeDie1);
+		dice.set(1, DieColor.RED_WHITE,   imgMeleeDie2);
+        dice.set(2, DieColor.BLUE_WHITE,  imgMeleeDie3);
+        dice.set(3, DieColor.BLACK_WHITE, imgMeleeDie4);
+        dice.set(4, DieColor.BLACK_RED,   imgMeleeDie5);
 	}
 
 	double getAttackerValue() {
@@ -346,11 +345,5 @@ public class MeleeCombatFragment extends Fragment {
         if (!v.isEmpty())
             return Double.parseDouble(v);
         return 1;           
-	}
-	
-	void incrementDie(int die) {
-		int value = dice.getDie(die-1);
-		if (++value > 6) value = 1;
-		dice.setDie(die-1, value);
 	}
 }
