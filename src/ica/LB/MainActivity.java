@@ -63,7 +63,8 @@ public class MainActivity extends Activity {
 
         if (initial) {
             Game saved = LbManager.getSaved();
-            showBattle(saved.getBattle(), saved.getScenario());
+            if (saved != null)
+                showBattle(saved.getBattle(), saved.getScenario());
         }
         initial = false;
     }

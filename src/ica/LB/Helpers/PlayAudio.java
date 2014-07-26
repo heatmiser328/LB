@@ -24,10 +24,12 @@ public class PlayAudio {
 			player.setOnCompletionListener(new OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
-				    player.stop ();
-    				player.release ();
-    				player = null;
-                }                    
+                    if (player != null) {
+                        player.stop();
+                        player.release();
+                        player = null;
+                    }
+                }
 			});
 			player.start ();
 		} catch (Exception ex) {
