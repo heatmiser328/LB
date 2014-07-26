@@ -16,7 +16,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 import ica.LB.Core.*;
-import ica.LB.Helpers.*;
+import com.ica.dice.*;
 
 /**
  * Created by jcapuano on 5/18/2014.
@@ -283,7 +283,7 @@ public class FireCombatFragment extends Fragment {
 		    imgFireDie1.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(1);
+                    dice.increment(0);
 			        displayDice();
 			        updateResults();
 			    }
@@ -291,7 +291,7 @@ public class FireCombatFragment extends Fragment {
 		    imgFireDie2.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(2);
+                    dice.increment(1);
 			        displayDice();
 			        updateResults();
 			    }
@@ -299,7 +299,7 @@ public class FireCombatFragment extends Fragment {
 		    imgFireDie3.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(3);
+                    dice.increment(2);
 			        displayDice();
 			        updateResults();
 			    }
@@ -307,7 +307,7 @@ public class FireCombatFragment extends Fragment {
 		    imgFireDie4.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(4);
+                    dice.increment(3);
 			        displayDice();
 			        updateResults();
 			    }
@@ -315,7 +315,7 @@ public class FireCombatFragment extends Fragment {
 		    imgFireDie5.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(5);
+                    dice.increment(4);
 			        displayDice();
 			        updateResults();
 			    }
@@ -366,11 +366,11 @@ public class FireCombatFragment extends Fragment {
 	}
 
 	void displayDice() {
-		imgFireDie1.setImageResource(DiceResources.getWhiteBlack(dice.getDie(0)));
-		imgFireDie2.setImageResource(DiceResources.getRedWhite(dice.getDie(1)));
-		imgFireDie3.setImageResource(DiceResources.getBlue(dice.getDie(2)));
-		imgFireDie4.setImageResource(DiceResources.getBlackWhite(dice.getDie(3)));
-		imgFireDie5.setImageResource(DiceResources.getBlackRed(dice.getDie(4)));
+        dice.set(0, DieColor.WHITE_BLACK, imgFireDie1);
+		dice.set(1, DieColor.RED_WHITE,   imgFireDie2);
+        dice.set(2, DieColor.BLUE_WHITE,  imgFireDie3);
+        dice.set(3, DieColor.BLACK_WHITE, imgFireDie4);
+        dice.set(4, DieColor.BLACK_RED,   imgFireDie5);
 	}
 
 	double getAttackerValue() {
@@ -408,11 +408,5 @@ public class FireCombatFragment extends Fragment {
             }
         }
         return defenseValues[defenseValues.length-1];
-	}
-		
-	void incrementDie(int die) {
-		int value = dice.getDie(die-1);
-		if (++value > 6) value = 1;
-		dice.setDie(die-1, value);
 	}
 }

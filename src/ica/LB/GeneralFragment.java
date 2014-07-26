@@ -14,7 +14,7 @@ import android.view.ViewParent;
 import android.widget.*;
 
 import ica.LB.Core.*;
-import ica.LB.Helpers.*;
+import com.ica.dice.*;
 
 /**
  * Created by jcapuano on 5/24/2014.
@@ -79,8 +79,8 @@ public class GeneralFragment extends Fragment {
 	}
 
 	void displayDice() {
-		imgGeneral2Die1.setImageResource(DiceResources.getWhiteBlack(dice2.getDie(0)));
-		imgGeneral2Die2.setImageResource(DiceResources.getRedWhite(dice2.getDie(1)));
-		imgGeneral1Die1.setImageResource(DiceResources.getBlue(dice1.getDie(0)));
+        dice1.set(0, DieColor.WHITE_BLACK, imgGeneral2Die1);
+		dice1.set(1, DieColor.RED_WHITE,   imgGeneral2Die2);
+        dice2.set(2, DieColor.BLUE_WHITE,  imgGeneral1Die1);
 	}
 }

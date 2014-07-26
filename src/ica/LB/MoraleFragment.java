@@ -14,7 +14,7 @@ import android.view.ViewParent;
 import android.widget.*;
 
 import ica.LB.Core.*;
-import ica.LB.Helpers.*;
+import com.ica.dice.*;
 
 /**
  * Created by jcapuano on 5/24/2014.
@@ -111,7 +111,7 @@ public class MoraleFragment extends Fragment {
 		    imgMoraleDie1.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(1);
+                    dice.increment(0);
 			        displayDice();
 			        updateResults();
 			    }
@@ -119,7 +119,7 @@ public class MoraleFragment extends Fragment {
 		    imgMoraleDie2.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
-			        incrementDie(2);
+                    dice.increment(1);
 			        displayDice();
 			        updateResults();
 			    }
@@ -196,8 +196,8 @@ public class MoraleFragment extends Fragment {
 	}
 	
 	void displayDice() {
-		imgMoraleDie1.setImageResource(DiceResources.getWhiteBlack(dice.getDie(0)));
-		imgMoraleDie2.setImageResource(DiceResources.getRedWhite(dice.getDie(1)));
+        dice.set(0, DieColor.WHITE_BLACK, imgMoraleDie1);
+		dice.set(1, DieColor.RED_WHITE,   imgMoraleDie2);
 	}
 
 	int getMoraleValue() {
@@ -212,11 +212,5 @@ public class MoraleFragment extends Fragment {
 		int value = b6i.add(mod);
 		dice.setDie(0, value / 10);
 		dice.setDie(1, value % 10);
-	}
-	
-	void incrementDie(int die) {
-		int value = dice.getDie(die-1);
-		if (++value > 6) value = 1;
-		dice.setDie(die-1, value);
 	}
 }
