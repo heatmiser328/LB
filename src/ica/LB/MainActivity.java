@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
         
         super.onCreate(savedInstanceState);
 
-        LbManager.initialize(getApplicationContext());
+        Lb.initialize(getApplicationContext());
 
         setContentView(R.layout.main);
 
@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
         
 		//Find our controls
 		battleListView = (ExpandableListView)findViewById(R.id.listBattles);
-        battles = LbManager.getBattles();
+        battles = Lb.getBattles();
 
         // create our adapter
         battleList = new ica.LB.Adapters.BattleListAdapter(this, battles);
@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
         });
 
         if (initial) {
-            Game saved = LbManager.getSaved();
+            Game saved = Lb.getSaved();
             if (saved != null)
                 showBattle(saved.getBattle(), saved.getScenario());
         }

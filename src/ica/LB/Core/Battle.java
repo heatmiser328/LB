@@ -9,7 +9,7 @@ public class Battle {
 	private int id;
 	private String name;
 	private String publisher;
-	private int sort;
+	private String image;
     private ArrayList<Scenario> scenarios;
 
 	public Battle ()
@@ -38,11 +38,11 @@ public class Battle {
         publisher = s;
     }
     
-	public int getSort() {
-        return sort;
+	public String getImage() {
+        return image;
     }
-	public void setSort(int v) {
-        sort = v;
+	public void setImage(String v) {
+        image = v;
     }
     
 	public ArrayList<Scenario> getScenarios() {
@@ -58,4 +58,8 @@ public class Battle {
 		}
 		return null;
 	}
+
+    public void setScenarios(ArrayList<Scenario> scenarios) {
+        this.scenarios = scenarios;
+    }
 }

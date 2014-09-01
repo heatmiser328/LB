@@ -1,59 +1,92 @@
 package ica.LB.Core;
 
-/**
- * Created by jcapuano on 5/17/2014.
- */
+import android.content.Context;
+import android.util.Log;
+import java.io.*;
+import java.text.*;
+import java.util.*;
+
+
 public class Lb {
-	private int battle;
-	private int scenario;
-	private int turn;
-	private int phase;
+    private static Context ctx;
+    private static List<Battle> battles;
+    private static Saved saved;
 
-	public Lb () {
-		battle = 0;
-		scenario = 0;
-		turn = 1;
-		phase = 0;
-	}
-	public Lb (int battleid, int scenarioid) {
-        super();
-		battle = battleid;
-		scenario = scenarioid;
-	}
-
-	public int getBattle() {
-        return battle;
-    }
-	public void setBattle(int v) {
-        battle = v;
+    public static void initialize(Context c) {
+        ctx = c;
     }
     
-	public int getScenario() {
-        return scenario;
-    }
-	public void setScenario(int v) {
-        scenario = v;
-    }
-    
-	public int getTurn() {
-        return turn;
-    }
-	public void setTurn(int v) {
-        turn = v;
+    public static List<Battle> getBattles() {
+        try {
+            if (battles == null) {
+                battles = BattleRepository.read(ctx.getAssets().open("battles.json"));
+            }
+        }
+        catch (Exception ex) {
+            Log.e("getBattles", "Failed to get battles", ex);
+        }
+        return battles;
     }
     
-	public int getPhase() {
-        return phase;
+    public static Battle getBattle(int id) {
+        List<Battle> l = getBattles();
+        for (Battle b : l) {
+			if (b.getId() == id)
+				return b;
+		}
+		return null;        
     }
-	public void setPhase(int v) {
-        phase = v;
-    }
-	
-	public void reset(Battle b, Scenario s) {
-		battle = b.getId();
-		scenario = s.getId();
-		turn = 1;
-		phase = 0;
+    
+	public static Game getGame(int battleid, int scenarioid) {
+		Battle battle = getBattle(battleid);
+		Scenario scenario = battle.getScenario(scenarioid);
+		Saved saved = getSaved(battle, scenario);
+        if (saved == null || saved.getBattle() != battleid && saved.getScenario() != scenarioid) {
+            saved = new Saved(battleid, scenarioid);
+        }
+		return new Game(battle, scenario, saved);
 	}
-
+    
+    
+    public static Game getSaved() {
+        Saved saved = getSaved(null, null);
+        if (saved != null) {
+		    Battle battle = getBattle(saved.getBattle());
+            if (battle != null) {
+                Scenario scenario = battle.getScenario(saved.getScenario());
+                return new Game(battle, scenario, saved);
+            }
+        }
+        return null;
+    }
+    
+    public static Saved getSaved(Battle battle, Scenario scenario) {
+        try {
+            if (saved == null) {
+                saved = SavedRepository.read(ctx.openFileInput("saved.json"));
+            }
+        }
+        catch (FileNotFoundException fex) {
+            saved = new Saved();
+            if (battle != null)
+                saved.setBattle(battle.getId());
+            if (scenario != null)
+                saved.setScenario(scenario.getId());
+        }
+        catch (Exception ex) {
+            Log.e("getSaved", "Failed to get saved battle", ex);
+        }
+        return saved;
+    }
+    
+    public static void saveSaved() {
+        try {
+            if (saved != null) {
+                SavedRepository.write(ctx.openFileOutput("saved.json", 0), saved);
+            }
+        }
+        catch (Exception ex) {
+            Log.e("saveSaved", "Failed to save battle", ex);
+        }
+    }
 }

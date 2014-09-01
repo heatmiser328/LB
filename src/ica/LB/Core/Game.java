@@ -9,7 +9,7 @@ public class Game {
 
     private Battle battle;
     private Scenario scenario;
-    private Lb saved;
+    private Saved saved;
 	private String[] phases = new String[] {
 		"Command",
 		"Imperial: Charge a Cheval",
@@ -30,7 +30,7 @@ public class Game {
 		"Sovereign: Readiness Recovery"
 	};
 	
-	public Game(Battle b, Scenario s, Lb sv) {
+	public Game(Battle b, Scenario s, Saved sv) {
 		battle = b;
 		scenario = s;
 		saved = sv;
@@ -46,7 +46,7 @@ public class Game {
         return scenario; 
     }
 	
-	public Lb getSaved() {
+	public Saved getSaved() {
         return saved; 
     }
 

@@ -26,7 +26,6 @@
                 android:src="@drawable/die6_redwhite_1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_gravity="center"
                 android:layout_alignTop="@+id/imgGeneral2Die1"
                 android:layout_toRightOf="@+id/imgGeneral2Die1"
                 android:clickable="true"

@@ -19,6 +19,7 @@ import android.util.Log;
 import android.widget.*;
 
 import ica.LB.Adapters.TabsPagerAdapter;
+import ica.LB.Core.*;
 
 /**
  * Created by jcapuano on 5/18/2014.
@@ -40,14 +41,14 @@ public class BattleActivity extends FragmentActivity implements ActionBar.TabLis
     private GestureDetector turnGestDetector;
     private GestureDetector phaseGestDetector;
     
-	private ica.LB.Core.Game game;
+	private Game game;
 
     @Override
     public void onCreate (Bundle bundle) {
         super.onCreate(bundle);
 
         Intent intent = getIntent();
-		game = ica.LB.Core.LbManager.getGame(intent.getIntExtra ("Battle", -1), intent.getIntExtra("Scenario", -1));
+		game = Lb.getGame(intent.getIntExtra ("Battle", -1), intent.getIntExtra("Scenario", -1));
 
         setContentView(R.layout.battle);
 
@@ -334,7 +335,7 @@ public class BattleActivity extends FragmentActivity implements ActionBar.TabLis
 	
     private void save() {
         try {
-            ica.LB.Core.LbManager.saveGame(game);
+            Lb.saveSaved();
         } catch(Exception e) {
         }
 	}
