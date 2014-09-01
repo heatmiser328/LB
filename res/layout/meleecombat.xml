@@ -36,12 +36,10 @@
                     android:weightSum="1.0">
                     <Button
                         android:id="@+id/btnMeleeAttackerPrev"
-                        android:text="-"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
+                        android:background="@drawable/ic_action_previous_item"/>
                     <EditText
                         android:id="@+id/editMeleeAttackerValue"
                         android:inputType="numberDecimal"
@@ -53,14 +51,12 @@
                         android:gravity="center" />
                     <Button
                         android:id="@+id/btnMeleeAttackerNext"
-                        android:text="+"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
                         android:layout_alignTop="@+id/btnMeleeAttackerPrev"
                         android:layout_toRightOf="@+id/editMeleeAttackerValue"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
+                        android:background="@drawable/ic_action_next_item"/>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/layoutMeleeAttackerMods"
@@ -107,12 +103,10 @@
                     android:weightSum="1.0">
                     <Button
                         android:id="@+id/btnMeleeDefenderPrev"
-                        android:text="-"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
+                        android:background="@drawable/ic_action_previous_item"/>
                     <EditText
                         android:id="@+id/editMeleeDefenderValue"
                         android:inputType="numberDecimal"
@@ -124,14 +118,12 @@
                         android:gravity="center" />
                     <Button
                         android:id="@+id/btnMeleeDefenderNext"
-                        android:text="+"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
                         android:layout_alignTop="@+id/btnMeleeDefenderPrev"
                         android:layout_toRightOf="@+id/editMeleeDefenderValue"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
+                        android:background="@drawable/ic_action_next_item"/>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/layoutMeleeDefenderMods"

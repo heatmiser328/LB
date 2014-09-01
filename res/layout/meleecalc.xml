@@ -35,13 +35,11 @@
                 android:id="@+id/lblMeleeIncrValue" />
             <Button
                 android:id="@+id/btnMeleeIncrPrev"
-                android:text="-"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_toRightOf="@+id/lblMeleeIncrValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_previous_item"/>
             <EditText
                 android:id="@+id/editMeleeIncrValue"
                 android:inputType="numberDecimal"
@@ -53,14 +51,12 @@
                 android:gravity="center" />
             <Button
                 android:id="@+id/btnMeleeIncrNext"
-                android:text="+"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_alignTop="@+id/btnMeleeIncrPrev"
                 android:layout_toRightOf="@+id/editMeleeIncrValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_next_item"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layoutMeleeUnitLoss"
@@ -77,13 +73,11 @@
                 android:id="@+id/lblMeleeLossValue" />
             <Button
                 android:id="@+id/btnMeleeLossPrev"
-                android:text="-"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_toRightOf="@+id/lblMeleeLossValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_previous_item"/>
             <EditText
                 android:id="@+id/editMeleeLossValue"
                 android:inputType="numberDecimal"
@@ -95,14 +89,12 @@
                 android:gravity="center" />
             <Button
                 android:id="@+id/btnMeleeLossNext"
-                android:text="+"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_alignTop="@+id/btnMeleeLossPrev"
                 android:layout_toRightOf="@+id/editMeleeLossValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_next_item"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layoutMeleeUnitValue"
@@ -119,13 +111,11 @@
                 android:id="@+id/lblMeleeValueValue" />
             <Button
                 android:id="@+id/btnMeleeValuePrev"
-                android:text="-"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_toRightOf="@+id/lblMeleeValueValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_previous_item"/>
             <EditText
                 android:id="@+id/editMeleeValueValue"
                 android:inputType="numberDecimal"
@@ -137,14 +127,12 @@
                 android:gravity="center" />
             <Button
                 android:id="@+id/btnMeleeValueNext"
-                android:text="+"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_alignTop="@+id/btnMeleeValuePrev"
                 android:layout_toRightOf="@+id/editMeleeValueValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_next_item"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layoutMeleeUnitLance"
@@ -161,13 +149,11 @@
                 android:id="@+id/lblMeleeLanceValue" />
             <Button
                 android:id="@+id/btnMeleeLancePrev"
-                android:text="-"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_toRightOf="@+id/lblMeleeLanceValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_previous_item"/>
             <EditText
                 android:id="@+id/editMeleeLanceValue"
                 android:inputType="numberDecimal"
@@ -179,14 +165,12 @@
                 android:gravity="center" />
             <Button
                 android:id="@+id/btnMeleeLanceNext"
-                android:text="+"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_alignTop="@+id/btnMeleeLancePrev"
                 android:layout_toRightOf="@+id/editMeleeLanceValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_next_item"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layoutMeleeUnitTotal"
@@ -203,13 +187,11 @@
                 android:id="@+id/lblMeleeTotalValue" />
             <Button
                 android:id="@+id/btnMeleeTotalPrev"
-                android:text="-"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_toRightOf="@+id/lblMeleeTotalValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_previous_item"/>
             <EditText
                 android:id="@+id/editMeleeTotalValue"
                 android:inputType="numberDecimal"
@@ -221,14 +203,12 @@
                 android:gravity="center" />
             <Button
                 android:id="@+id/btnMeleeTotalNext"
-                android:text="+"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_alignTop="@+id/btnMeleeTotalPrev"
                 android:layout_toRightOf="@+id/editMeleeTotalValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_next_item"/>
         </LinearLayout>
     </LinearLayout>
     

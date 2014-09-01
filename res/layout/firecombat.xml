@@ -45,13 +45,11 @@
                         android:id="@+id/lblFireAttackerValue" />
                     <Button
                         android:id="@+id/btnFireAttackerPrev"
-                        android:text="-"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
                         android:layout_toRightOf="@+id/lblFireAttackerValue"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
+                        android:background="@drawable/ic_action_previous_item"/>
                     <EditText
                         android:id="@+id/textFireAttackerValue"
                         android:inputType="numberDecimal"
@@ -63,14 +61,12 @@
                         android:gravity="center" />
                     <Button
                         android:id="@+id/btnFireAttackerNext"
-                        android:text="+"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
                         android:layout_alignTop="@+id/btnFireAttackerPrev"
                         android:layout_toRightOf="@+id/textFireAttackerValue"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
+                        android:background="@drawable/ic_action_next_item"/>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/layoutFireAttackerMods"
@@ -147,13 +143,11 @@
                         android:id="@+id/lblFireDefenderValue" />
                     <Button
                         android:id="@+id/btnFireDefenderPrev"
-                        android:text="-"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
                         android:layout_toRightOf="@+id/lblFireDefenderValue"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
+                        android:background="@drawable/ic_action_previous_item"/>
                     <EditText
                         android:id="@+id/textFireDefenderValue"
                         android:inputType="numberDecimal"
@@ -165,14 +159,12 @@
                         android:gravity="center" />
                     <Button
                         android:id="@+id/btnFireDefenderNext"
-                        android:text="+"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
                         android:layout_alignTop="@+id/btnFireDefenderPrev"
                         android:layout_toRightOf="@+id/textFireDefenderValue"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
+                        android:background="@drawable/ic_action_next_item"/>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/layoutFireDefenderIncr"
@@ -189,13 +181,11 @@
                         android:id="@+id/lblFireDefenderIncr" />
                     <Button
                         android:id="@+id/btnFireDefenderIncrPrev"
-                        android:text="-"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
                         android:layout_toRightOf="@+id/lblFireDefenderIncr"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
+                        android:background="@drawable/ic_action_previous_item"/>
                     <EditText
                         android:id="@+id/textFireDefenderIncr"
                         android:inputType="numberDecimal"
@@ -207,14 +197,12 @@
                         android:gravity="center" />
                     <Button
                         android:id="@+id/btnFireDefenderIncrNext"
-                        android:text="+"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
                         android:layout_alignTop="@+id/btnFireDefenderIncrPrev"
                         android:layout_toRightOf="@+id/textFireDefenderIncr"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
+                        android:background="@drawable/ic_action_next_item"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

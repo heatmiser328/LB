@@ -23,13 +23,11 @@
                 android:id="@+id/lblMoraleValue" />
             <Button
                 android:id="@+id/btnMoralePrev"
-                android:text="-"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_toRightOf="@+id/lblMoraleValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_previous_item"/>
             <EditText
                 android:id="@+id/editMoraleValue"
                 android:inputType="numberDecimal"
@@ -37,18 +35,16 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/btnMoralePrev"
                 android:layout_alignTop="@+id/btnMoralePrev"
-                android:layout_weight=".55"
+                android:layout_weight=".25"
                 android:gravity="center" />
             <Button
                 android:id="@+id/btnMoraleNext"
-                android:text="+"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".15"
                 android:layout_alignTop="@+id/btnMoralePrev"
                 android:layout_toRightOf="@+id/textMoraleValue"
-                android:background="@drawable/blue_button"
-                style="@style/button_text" />
+                android:background="@drawable/ic_action_next_item"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layoutMoraleDice"
