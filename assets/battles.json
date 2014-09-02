@@ -619,7 +619,7 @@
 	    "id": 38,
 	    "name": "La Bataille de Preussesch-Eylau",
 	    "publisher": "Clash of Arms",
-	    "image": "preussesch-eylau",
+	    "image": "eylau",
 	    "scenarios": [
 	        {
 	            "id": 39,
@@ -1143,7 +1143,7 @@
 	    "id": 71,
 	    "name": "La Bataille de Corunna-Espagnol",
 	    "publisher": "Clash of Arms",
-	    "image": "corunna-espagnol",
+	    "image": "corunna",
 	    "scenarios": [
 	        {
 	            "id": 72,

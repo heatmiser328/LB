@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import ica.LB.R;
 
@@ -76,10 +78,15 @@ public class BattleListAdapter extends BaseExpandableListAdapter {
             view = inf.inflate(R.layout.battlelistitem, parent, false);
 
 		// Find references to each subview in the list item's view
+        ImageView imageView = (ImageView) view.findViewById(R.id.logo);
 		TextView txtName = (TextView)view.findViewById(R.id.textName);
 		TextView txtPublisher = (TextView)view.findViewById(R.id.textPublisher);
 
 		//Assign item's values to the various subviews
+        int resid = context.getResources().getIdentifier("drawable/" + item.getImage(), null, context.getPackageName());
+        //ExpandableListView ev = (ExpandableListView)parent;
+        //ev.setGroupIndicator(context.getResources().getDrawable(resid));
+        imageView.setImageResource(resid);
 		txtName.setText (item.getName(), TextView.BufferType.NORMAL);
 		txtPublisher.setText (item.getPublisher(), TextView.BufferType.NORMAL);
 
