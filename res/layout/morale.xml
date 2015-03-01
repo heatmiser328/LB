@@ -124,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".05"
                 android:layout_toRightOf="@+id/btnMoraleMinus1"
-                android:id="@+id/lblMoraleDiv" />
+                android:id="@+id/lblMoraleDiv" android:gravity="center_horizontal"/>
             <Button
                 android:id="@+id/btnMoralePlus1"
                 android:text="+1"
@@ -159,7 +159,7 @@
             android:id="@+id/layoutMoraleResults"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:weightSum="1.0">
+            android:weightSum="1.0" android:paddingTop="20dp">
             <TextView
                 android:text="Results"
                 android:textAppearance="?android:attr/textAppearanceSmall"

@@ -252,6 +252,9 @@ public class MeleeCombatFragment extends Fragment {
 		    imgMeleeDie2.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
+                    if (dice.getDie(1) == 6) {
+                        dice.increment(0);
+                    }
                     dice.increment(1);
 			        displayDice();
 			        updateResults();

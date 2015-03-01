@@ -28,6 +28,12 @@ public class FireCombatFragment extends Fragment {
 	private Button btnAttackerValuePrev;
 	private Button btnAttackerValueNext;
 	private EditText editAttackerValue;
+	private Button btnAttackerValue4;
+	private Button btnAttackerValue6;
+	private Button btnAttackerValue9;
+	private Button btnAttackerValue12;
+	private Button btnAttackerValue16;
+	private Button btnAttackerValue18;
 	private ToggleButton btnAttackerMod13;
 	private ToggleButton btnAttackerMod12;
 	private ToggleButton btnAttackerMod32;
@@ -37,6 +43,13 @@ public class FireCombatFragment extends Fragment {
 	private Button btnDefenderValueNext;
 	private EditText editDefenderValue;
 	
+	private Button btnDefenderValue4;
+	private Button btnDefenderValue6;
+	private Button btnDefenderValue9;
+	private Button btnDefenderValue12;
+	private Button btnDefenderValue14;
+	private Button btnDefenderValue16;
+    
 	private Button btnDefenderIncrPrev;
 	private Button btnDefenderIncrNext;
 	private EditText editDefenderIncr;
@@ -81,6 +94,14 @@ public class FireCombatFragment extends Fragment {
 		    btnAttackerValuePrev = (Button)rootView.findViewById(R.id.btnFireAttackerPrev);
 		    btnAttackerValueNext = (Button)rootView.findViewById(R.id.btnFireAttackerNext);
 		    editAttackerValue = (EditText)rootView.findViewById(R.id.textFireAttackerValue);
+            
+            btnAttackerValue4 = (Button)rootView.findViewById(R.id.btnFireAttackerValue4);
+            btnAttackerValue6 = (Button)rootView.findViewById(R.id.btnFireAttackerValue6);
+            btnAttackerValue9 = (Button)rootView.findViewById(R.id.btnFireAttackerValue9);
+            btnAttackerValue12 = (Button)rootView.findViewById(R.id.btnFireAttackerValue12);
+            btnAttackerValue16 = (Button)rootView.findViewById(R.id.btnFireAttackerValue16);
+            btnAttackerValue18 = (Button)rootView.findViewById(R.id.btnFireAttackerValue18);
+            
 		    btnAttackerMod13 = (ToggleButton)rootView.findViewById(R.id.btnFireAttacker13);
 		    btnAttackerMod12 = (ToggleButton)rootView.findViewById(R.id.btnFireAttacker12);
 		    btnAttackerMod32 = (ToggleButton)rootView.findViewById(R.id.btnFireAttacker32);
@@ -90,7 +111,14 @@ public class FireCombatFragment extends Fragment {
 		    btnDefenderValuePrev = (Button)rootView.findViewById(R.id.btnFireDefenderPrev);
 		    btnDefenderValueNext = (Button)rootView.findViewById(R.id.btnFireDefenderNext);
 		    editDefenderValue = (EditText)rootView.findViewById(R.id.textFireDefenderValue);
-		
+        
+            btnDefenderValue4 = (Button)rootView.findViewById(R.id.btnFireDefenderValue4);
+            btnDefenderValue6 = (Button)rootView.findViewById(R.id.btnFireDefenderValue6);
+            btnDefenderValue9 = (Button)rootView.findViewById(R.id.btnFireDefenderValue9);
+            btnDefenderValue12 = (Button)rootView.findViewById(R.id.btnFireDefenderValue12);
+            btnDefenderValue14 = (Button)rootView.findViewById(R.id.btnFireDefenderValue14);
+            btnDefenderValue16 = (Button)rootView.findViewById(R.id.btnFireDefenderValue16);
+        
 		    btnDefenderIncrPrev = (Button)rootView.findViewById(R.id.btnFireDefenderIncrPrev);
 		    btnDefenderIncrNext = (Button)rootView.findViewById(R.id.btnFireDefenderIncrNext);
 		    editDefenderIncr = (EditText)rootView.findViewById(R.id.textFireDefenderIncr);
@@ -149,6 +177,56 @@ public class FireCombatFragment extends Fragment {
                 }
             });
         
+            btnAttackerValue4.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editAttackerValue.setText(Double.toString(4.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            btnAttackerValue6.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editAttackerValue.setText(Double.toString(6.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            btnAttackerValue9.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editAttackerValue.setText(Double.toString(9.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            btnAttackerValue12.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editAttackerValue.setText(Double.toString(12.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            btnAttackerValue16.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editAttackerValue.setText(Double.toString(16.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            btnAttackerValue18.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editAttackerValue.setText(Double.toString(18.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+        
+        
 		    btnAttackerMod13.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
@@ -197,6 +275,7 @@ public class FireCombatFragment extends Fragment {
 		    btnAttackerModCann.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
+                    calcOdds();
 			        updateResults();
 			    }
 		    });
@@ -235,6 +314,56 @@ public class FireCombatFragment extends Fragment {
                 }
             });
 		
+        
+            btnDefenderValue4.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editDefenderValue.setText(Double.toString(4.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            btnDefenderValue6.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editDefenderValue.setText(Double.toString(6.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            btnDefenderValue9.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editDefenderValue.setText(Double.toString(9.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            btnDefenderValue12.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editDefenderValue.setText(Double.toString(12.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            btnDefenderValue14.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editDefenderValue.setText(Double.toString(14.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+            btnDefenderValue16.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editDefenderValue.setText(Double.toString(16.0));
+			        calcOdds();
+			        updateResults();
+			    }
+		    });
+        
 		    btnDefenderIncrPrev.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
@@ -291,6 +420,9 @@ public class FireCombatFragment extends Fragment {
 		    imgFireDie2.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
+                    if (dice.getDie(1) == 6) {
+                        dice.increment(0);
+                    }
                     dice.increment(1);
 			        displayDice();
 			        updateResults();

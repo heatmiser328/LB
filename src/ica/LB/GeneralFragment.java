@@ -79,8 +79,8 @@ public class GeneralFragment extends Fragment {
 	}
 
 	void displayDice() {
-        dice1.set(0, DieColor.WHITE_BLACK, imgGeneral2Die1);
-		dice1.set(1, DieColor.RED_WHITE,   imgGeneral2Die2);
-        dice2.set(2, DieColor.BLUE_WHITE,  imgGeneral1Die1);
+        dice2.set(0, DieColor.WHITE_BLACK, imgGeneral2Die1);
+		dice2.set(1, DieColor.RED_WHITE,   imgGeneral2Die2);
+        dice1.set(0, DieColor.BLUE_WHITE,  imgGeneral1Die1);
 	}
 }

@@ -73,6 +73,9 @@ public class BattleActivity extends FragmentActivity implements ActionBar.TabLis
         actionBar.setTitle(game.getBattle().getName());
         actionBar.setSubtitle(game.getScenario().getName());
 
+        int resid = getApplicationContext().getResources().getIdentifier("drawable/" + game.getBattle().getImage(), null, getApplicationContext().getPackageName());
+        actionBar.setIcon(resid);
+
 		// Adding Tabs
 		for (String tab_name : tabs) {
 			actionBar.addTab(actionBar.newTab().setText(tab_name)
@@ -335,7 +338,7 @@ public class BattleActivity extends FragmentActivity implements ActionBar.TabLis
 	
     private void save() {
         try {
-            Lb.saveSaved();
+            Lb.saveSaved(game);
         } catch(Exception e) {
         }
 	}

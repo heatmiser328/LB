@@ -254,7 +254,8 @@
                     android:id="@+id/lblMeleeResults"
                     android:layout_gravity="center_vertical" />
                 <TextView
-                    android:text="2"
+                    android:text="NE"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".15"
@@ -275,6 +276,7 @@
                     android:visibility="visible" />
                 <TextView
                     android:text="Leg 5 hours"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight=".40"

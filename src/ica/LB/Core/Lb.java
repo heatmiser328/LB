@@ -79,10 +79,11 @@ public class Lb {
         return saved;
     }
     
-    public static void saveSaved() {
+    public static void saveSaved(Game game) {
         try {
-            if (saved != null) {
-                SavedRepository.write(ctx.openFileOutput("saved.json", 0), saved);
+            Saved sv = game.getSaved();
+            if (sv != null) {
+                SavedRepository.write(ctx.openFileOutput("saved.json", 0), sv);
             }
         }
         catch (Exception ex) {
