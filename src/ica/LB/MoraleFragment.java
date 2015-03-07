@@ -26,6 +26,13 @@ public class MoraleFragment extends Fragment {
 	private Button btnMoralePrev;
 	private Button btnMoraleNext;
 	private EditText editMoraleValue;
+
+	private Button btnMoraleValue16;
+	private Button btnMoraleValue26;
+	private Button btnMoraleValue36;
+	private Button btnMoraleValue46;
+	private Button btnMoraleValue56;
+	private Button btnMoraleValue66;
 	
 	private ImageView imgMoraleDie1;
 	private ImageView imgMoraleDie2;
@@ -63,6 +70,13 @@ public class MoraleFragment extends Fragment {
 		    editMoraleValue = (EditText)rootView.findViewById(R.id.editMoraleValue);
 		
 		    editMoraleValue.setText("11");
+            
+            btnMoraleValue16 = (Button)rootView.findViewById(R.id.btnMoraleValue16);
+            btnMoraleValue26 = (Button)rootView.findViewById(R.id.btnMoraleValue26);
+            btnMoraleValue36 = (Button)rootView.findViewById(R.id.btnMoraleValue36);
+            btnMoraleValue46 = (Button)rootView.findViewById(R.id.btnMoraleValue46);
+            btnMoraleValue56 = (Button)rootView.findViewById(R.id.btnMoraleValue56);
+            btnMoraleValue66 = (Button)rootView.findViewById(R.id.btnMoraleValue66);
 		
 		    imgMoraleDie1 = (ImageView)rootView.findViewById (R.id.imgMoraleDie1);
 		    imgMoraleDie2 = (ImageView)rootView.findViewById (R.id.imgMoraleDie2);
@@ -107,6 +121,51 @@ public class MoraleFragment extends Fragment {
 			        updateResults();
                 }
             });
+
+
+            btnMoraleValue16.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editMoraleValue.setText("16");
+                    updateResults();
+			    }
+		    });
+            btnMoraleValue26.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editMoraleValue.setText("26");
+                    updateResults();
+			    }
+		    });
+            btnMoraleValue36.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editMoraleValue.setText("36");
+                    updateResults();
+			    }
+		    });
+            btnMoraleValue46.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editMoraleValue.setText("46");
+                    updateResults();
+			    }
+		    });
+            btnMoraleValue56.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editMoraleValue.setText("56");
+                    updateResults();
+			    }
+		    });
+            btnMoraleValue66.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        editMoraleValue.setText("66");
+                    updateResults();
+			    }
+		    });
+        
 		
 		    imgMoraleDie1.setOnClickListener(new OnClickListener() {
 			    @Override

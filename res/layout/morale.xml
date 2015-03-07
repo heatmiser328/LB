@@ -46,6 +46,63 @@
                 android:layout_toRightOf="@+id/textMoraleValue"
                 android:background="@drawable/ic_action_next_item"/>
         </LinearLayout>
+        
+        <LinearLayout
+                android:id="@+id/layoutMoraleValues"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1.0"
+                android:gravity="center"
+                android:paddingTop="19dp">
+            <Button
+                    android:id="@+id/btnMoraleValue16"
+                    android:text="16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <Button
+                    android:id="@+id/btnMoraleValue26"
+                    android:text="26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnMoraleValue16"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <Button
+                    android:id="@+id/btnMoraleValue36"
+                    android:text="36"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnMoraleValue16"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <Button
+                    android:id="@+id/btnMoraleValue46"
+                    android:text="46"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnMoraleValue16"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <Button
+                    android:id="@+id/btnMoraleValue56"
+                    android:text="56"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnMoraleValue16"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <Button
+                    android:id="@+id/btnMoraleValue66"
+                    android:text="66"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnMoraleValue16"
+                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+        </LinearLayout>
+        
         <LinearLayout
             android:id="@+id/layoutMoraleDice"
             android:layout_width="fill_parent"
