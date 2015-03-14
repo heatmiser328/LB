@@ -47,6 +47,13 @@ public class MeleeCombatFragment extends Fragment {
 	private ImageView imgMeleeDie5;
 	private Button btnMeleeDiceRoll;
 	
+	private Button btnMeleeMinus6;
+	private Button btnMeleeMinus3;
+	private Button btnMeleeMinus1;
+	private Button btnMeleePlus1;
+	private Button btnMeleePlus3;
+	private Button btnMeleePlus6;
+    
 	private TextView txtMeleeResults;
 	private TextView txtMeleeLeaderLoss;
 	private ImageView imgMeleeLeaderLossSide;
@@ -93,6 +100,13 @@ public class MeleeCombatFragment extends Fragment {
 		    imgMeleeDie5 = (ImageView)rootView.findViewById(R.id.imgMeleeDie5);
 		    btnMeleeDiceRoll = (Button)rootView.findViewById(R.id.btnMeleeDiceRoll);
 		
+		    btnMeleeMinus6 = (Button)rootView.findViewById(R.id.btnMeleeMinus6);
+		    btnMeleeMinus3 = (Button)rootView.findViewById(R.id.btnMeleeMinus3);
+		    btnMeleeMinus1 = (Button)rootView.findViewById(R.id.btnMeleeMinus1);
+		    btnMeleePlus1 = (Button)rootView.findViewById(R.id.btnMeleePlus1);
+		    btnMeleePlus3 = (Button)rootView.findViewById(R.id.btnMeleePlus3);
+		    btnMeleePlus6 = (Button)rootView.findViewById(R.id.btnMeleePlus6);
+        
 		    // results
 		    txtMeleeResults = (TextView)rootView.findViewById(R.id.txtMeleeResults);
 		    imgMeleeLeaderLossSide = (ImageView)rootView.findViewById(R.id.imgMeleeLeaderLossSide);
@@ -295,6 +309,57 @@ public class MeleeCombatFragment extends Fragment {
 			    }
 		    });
 		
+        
+		    btnMeleeMinus6.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(-6);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+		    btnMeleeMinus3.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(-3);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+		    btnMeleeMinus1.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(-1);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+		
+		    btnMeleePlus6.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(6);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+		    btnMeleePlus3.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(3);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+		    btnMeleePlus1.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(1);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+        
 		    displayOdds();
 		    displayDice();
         }   
@@ -348,5 +413,12 @@ public class MeleeCombatFragment extends Fragment {
         if (!v.isEmpty())
             return Double.parseDouble(v);
         return 1;           
+	}
+    
+	void modifyDice(int mod) {
+		Base6Value b6i = new Base6Value((dice.getDie(0)*10) + dice.getDie(1));
+		int value = b6i.add(mod);
+		dice.setDie(0, value / 10);
+		dice.setDie(1, value % 10);
 	}
 }

@@ -401,8 +401,81 @@
                             style="@style/button_text" />
 
                 </LinearLayout>
-
             </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/layoutFireMods"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1.0">
+                <Button
+                    android:id="@+id/btnFireMinus6"
+                    android:text="-6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:background="@drawable/blue_button"
+                    style="@style/button_text" />
+                <Button
+                    android:id="@+id/btnFireMinus3"
+                    android:text="-3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnFireMinus6"
+                    android:background="@drawable/blue_button"
+                    android:layout_toRightOf="@+id/btnFireMinus6"
+                    style="@style/button_text" />
+                <Button
+                    android:id="@+id/btnFireMinus1"
+                    android:text="-1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnFireMinus6"
+                    android:background="@drawable/blue_button"
+                    android:layout_toRightOf="@+id/btnFireMinus3"
+                    style="@style/button_text" />
+                <TextView
+                    android:text=" / "
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".05"
+                    android:layout_toRightOf="@+id/btnFireMinus1"
+                    android:id="@+id/lblFireDiv" android:gravity="center_horizontal"/>
+                <Button
+                    android:id="@+id/btnFirePlus1"
+                    android:text="+1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:background="@drawable/blue_button"
+                    android:layout_toRightOf="@+id/lblFireDiv"
+                    style="@style/button_text" />
+                <Button
+                    android:id="@+id/btnFirePlus3"
+                    android:text="+3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnFireMinus6"
+                    android:background="@drawable/blue_button"
+                    android:layout_toRightOf="@+id/lblFirePlus1"
+                    style="@style/button_text" />
+                <Button
+                    android:id="@+id/btnFirePlus6"
+                    android:text="+6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnFireMinus6"
+                    android:layout_toRightOf="@+id/lblFirePlus3"
+                    android:background="@drawable/blue_button"
+                    style="@style/button_text" />
+            </LinearLayout>
+            
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"

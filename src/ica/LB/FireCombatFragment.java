@@ -60,6 +60,13 @@ public class FireCombatFragment extends Fragment {
 	private ImageView imgFireDie4;
 	private ImageView imgFireDie5;
 	private Button btnFireDiceRoll;
+
+	private Button btnFireMinus6;
+	private Button btnFireMinus3;
+	private Button btnFireMinus1;
+	private Button btnFirePlus1;
+	private Button btnFirePlus3;
+	private Button btnFirePlus6;
 	
 	private TextView txtFireResults;
 	private TextView txtFireLeaderLoss;
@@ -136,6 +143,13 @@ public class FireCombatFragment extends Fragment {
 		    imgFireDie5 = (ImageView)rootView.findViewById(R.id.imgFireDie5);
 		    btnFireDiceRoll = (Button)rootView.findViewById(R.id.btnFireDiceRoll);
 		
+		    btnFireMinus6 = (Button)rootView.findViewById(R.id.btnFireMinus6);
+		    btnFireMinus3 = (Button)rootView.findViewById(R.id.btnFireMinus3);
+		    btnFireMinus1 = (Button)rootView.findViewById(R.id.btnFireMinus1);
+		    btnFirePlus1 = (Button)rootView.findViewById(R.id.btnFirePlus1);
+		    btnFirePlus3 = (Button)rootView.findViewById(R.id.btnFirePlus3);
+		    btnFirePlus6 = (Button)rootView.findViewById(R.id.btnFirePlus6);
+        
 		    // results
 		    txtFireResults = (TextView)rootView.findViewById(R.id.txtFireResults);
 		    imgFireLeaderLossSide = (ImageView)rootView.findViewById(R.id.imgFireLeaderLossSide);
@@ -463,6 +477,56 @@ public class FireCombatFragment extends Fragment {
 			    }
 		    });
 		
+		    btnFireMinus6.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(-6);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+		    btnFireMinus3.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(-3);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+		    btnFireMinus1.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(-1);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+		
+		    btnFirePlus6.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(6);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+		    btnFirePlus3.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(3);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+		    btnFirePlus1.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+			        modifyDice(1);
+			        displayDice();
+			        updateResults();
+			    }
+		    });
+        
 		    displayOdds();
 		    displayDice();
         }
@@ -540,5 +604,12 @@ public class FireCombatFragment extends Fragment {
             }
         }
         return defenseValues[defenseValues.length-1];
+	}
+    
+	void modifyDice(int mod) {
+		Base6Value b6i = new Base6Value((dice.getDie(0)*10) + dice.getDie(1));
+		int value = b6i.add(mod);
+		dice.setDie(0, value / 10);
+		dice.setDie(1, value % 10);
 	}
 }
