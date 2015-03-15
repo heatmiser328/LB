@@ -29,13 +29,13 @@ public class MeleeCombatFragment extends Fragment {
 	private Button btnMeleeAttackerPrev;
 	private Button btnMeleeAttackerNext;
 	private EditText editMeleeAttackerValue;
-	private Button btnMeleeAttackerAdd;
 	private Button btnMeleeAttackerReset;
 	
+	private Button btnMeleeAdd;
+    
 	private Button btnMeleeDefenderPrev;
 	private Button btnMeleeDefenderNext;
 	private EditText editMeleeDefenderValue;
-	private Button btnMeleeDefenderAdd;
 	private Button btnMeleeDefenderReset;
 	
 	private Spinner spinMeleeOdds;
@@ -82,13 +82,13 @@ public class MeleeCombatFragment extends Fragment {
 		    btnMeleeAttackerPrev   = (Button)rootView.findViewById(R.id.btnMeleeAttackerPrev	);
 		    btnMeleeAttackerNext   = (Button)rootView.findViewById(R.id.btnMeleeAttackerNext	);
 		    editMeleeAttackerValue = (EditText)rootView.findViewById(R.id.editMeleeAttackerValue);
-		    btnMeleeAttackerAdd	   = (Button)rootView.findViewById(R.id.btnMeleeAttackerAdd		);
 		    btnMeleeAttackerReset  = (Button)rootView.findViewById(R.id.btnMeleeAttackerReset	);
 		
+		    btnMeleeAdd	           = (Button)rootView.findViewById(R.id.btnMeleeAdd		);
+        
 		    btnMeleeDefenderPrev   = (Button)rootView.findViewById(R.id.btnMeleeDefenderPrev	);
 		    btnMeleeDefenderNext   = (Button)rootView.findViewById(R.id.btnMeleeDefenderNext	);
 		    editMeleeDefenderValue = (EditText)rootView.findViewById(R.id.editMeleeDefenderValue);
-		    btnMeleeDefenderAdd	   = (Button)rootView.findViewById(R.id.btnMeleeDefenderAdd		);
 		    btnMeleeDefenderReset  = (Button)rootView.findViewById(R.id.btnMeleeDefenderReset	);
 		
 		    spinMeleeOdds = (Spinner)rootView.findViewById(R.id.spinMeleeOdds);
@@ -150,32 +150,33 @@ public class MeleeCombatFragment extends Fragment {
                 }
             });
             
-		    btnMeleeAttackerAdd.setOnClickListener(new OnClickListener() {
-			    @Override
-			    public void onClick(View arg0) {
-                    FragmentManager fm = getActivity().getSupportFragmentManager();
-                    MeleeCalcDialog dlg = new MeleeCalcDialog();
-                    dlg.setFinishListener(new OnMeleeCalcFinishListener() {
-                        @Override
-                        public void onFinishDialog(Double v) {
-                            // add the value to the appropriate total
-			                double value = getAttackerValue();
-                            value += v;
-			                editMeleeAttackerValue.setText(Double.toString(value));
-			                calcOdds();
-			                updateResults();
-                        }
-                    });
-                    dlg.show(fm, "dlg_melee_calc");
-			    }
-		    });
-            
 		    btnMeleeAttackerReset.setOnClickListener(new OnClickListener() {
 			    @Override
 			    public void onClick(View arg0) {
 			        editMeleeAttackerValue.setText("0");
 			        calcOdds();
 			        updateResults();
+			    }
+		    });
+            
+            
+		    btnMeleeAdd.setOnClickListener(new OnClickListener() {
+			    @Override
+			    public void onClick(View arg0) {
+                    FragmentManager fm = getActivity().getSupportFragmentManager();
+                    MeleeCalcDialog dlg = new MeleeCalcDialog();
+                    dlg.setFinishListener(new OnMeleeCalcFinishListener() {
+                        @Override
+                        public void onFinishDialog(Boolean attacker, Double v) {
+                            if (attacker) {
+                                addToAttacker(v);
+                            }
+                            else {
+                                addToDefender(v);
+                            }
+                        }
+                    });
+                    dlg.show(fm, "dlg_melee_calc");
 			    }
 		    });
             
@@ -212,25 +213,6 @@ public class MeleeCombatFragment extends Fragment {
 			        updateResults();
                 }
             });
-		    btnMeleeDefenderAdd.setOnClickListener(new OnClickListener() {
-			    @Override
-			    public void onClick(View arg0) {
-                    FragmentManager fm = getActivity().getSupportFragmentManager();
-                    MeleeCalcDialog dlg = new MeleeCalcDialog();
-                    dlg.setFinishListener(new OnMeleeCalcFinishListener() {
-                        @Override
-                        public void onFinishDialog(Double v) {
-                            // add the value to the appropriate total
-			                double value = getDefenderValue();
-                            value += v;
-			                editMeleeDefenderValue.setText(Double.toString(value));
-			                calcOdds();
-			                updateResults();
-                        }
-                    });
-                    dlg.show(fm, "dlg_melee_calc");
-			    }
-		    });
             
 		    btnMeleeDefenderReset.setOnClickListener(new OnClickListener() {
 			    @Override
@@ -421,4 +403,22 @@ public class MeleeCombatFragment extends Fragment {
 		dice.setDie(0, value / 10);
 		dice.setDie(1, value % 10);
 	}
+ 
+    void addToAttacker(double v) {
+        // add the value to the appropriate total
+		double value = getAttackerValue();
+        value += v;
+		editMeleeAttackerValue.setText(Double.toString(value));
+		calcOdds();
+		updateResults();
+    }
+    
+    void addToDefender(double v) {
+        // add the value to the appropriate total
+		double value = getDefenderValue();
+        value += v;
+		editMeleeDefenderValue.setText(Double.toString(value));
+		calcOdds();
+		updateResults();
+    }
 }

@@ -19,7 +19,7 @@ import android.widget.*;
 public class MeleeCalcDialog extends DialogFragment {
 
     public interface OnMeleeCalcFinishListener {
-        public abstract void onFinishDialog(Double value);
+        public abstract void onFinishDialog(Boolean attacker, Double value);
     }
     
 
@@ -49,6 +49,9 @@ public class MeleeCalcDialog extends DialogFragment {
 	private ToggleButton btnMeleeMods2;
 	private ToggleButton btnMeleeModsLnc;
 	
+    private RadioButton radioMeleeAttacker; 
+    private RadioButton radioMeleeDefender; 
+    
     private OnMeleeCalcFinishListener evFinishListener;
     
     private double total;
@@ -96,6 +99,9 @@ public class MeleeCalcDialog extends DialogFragment {
 		btnMeleeMods2   = (ToggleButton)view.findViewById(R.id.btnMeleeMods2  );
 		btnMeleeModsLnc = (ToggleButton)view.findViewById(R.id.btnMeleeModsLnc);
 	
+        radioMeleeAttacker = (RadioButton)view.findViewById(R.id.radioMeleeAttacker);
+        radioMeleeDefender = (RadioButton)view.findViewById(R.id.radioMeleeDefender);
+    
 		editMeleeIncrValue.setText("1");
 		editMeleeLossValue.setText("0");
 		editMeleeValueValue.setText("1");
@@ -286,6 +292,18 @@ public class MeleeCalcDialog extends DialogFragment {
             }
         });
 
+        radioMeleeAttacker.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+                radioMeleeDefender.setChecked(false);
+			}
+		});        
+        radioMeleeDefender.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+                radioMeleeAttacker.setChecked(false);
+			}
+		});        
         
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder
@@ -333,10 +351,12 @@ public class MeleeCalcDialog extends DialogFragment {
             positiveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    /*
                     if (evFinishListener != null) {
                         if (total <= 0) total = getMeleeTotal();
-                        evFinishListener.onFinishDialog(total);
+                        evFinishListener.onFinishDialog(radioMeleeAttacker.isChecked(), total);
                     }
+                    */
                     dismiss();
                 }
             });
@@ -345,7 +365,11 @@ public class MeleeCalcDialog extends DialogFragment {
             neutralButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    total += getMeleeTotal();
+                    //total += getMeleeTotal();
+                    if (evFinishListener != null) {
+                        /*if (total <= 0)*/ total = getMeleeTotal();
+                        evFinishListener.onFinishDialog(radioMeleeAttacker.isChecked(), total);
+                    }
                 }
             });
             
@@ -353,9 +377,11 @@ public class MeleeCalcDialog extends DialogFragment {
             negativeButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    /*
                     if (evFinishListener != null) {
-                        evFinishListener.onFinishDialog(0.0);
+                        evFinishListener.onFinishDialog(radioMeleeAttacker.isChecked(), 0.0);
                     }
+                    */
                     dismiss();
                 }
             });

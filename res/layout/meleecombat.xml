@@ -58,29 +58,6 @@
                         android:layout_toRightOf="@+id/editMeleeAttackerValue"
                         android:background="@drawable/ic_action_next_item"/>
                 </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/layoutMeleeAttackerMods"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" 
-                    android:gravity="center">
-                    <Button
-                        android:id="@+id/btnMeleeAttackerAdd"
-                        android:text="Add"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
-                    <Button
-                        android:id="@+id/btnMeleeAttackerReset"
-                        android:text="Reset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@+id/btnMeleeAttackerAdd"
-                        android:layout_toRightOf="@+id/btnMeleeAttackerAdd"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
-                </LinearLayout>
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -125,29 +102,65 @@
                         android:layout_toRightOf="@+id/editMeleeDefenderValue"
                         android:background="@drawable/ic_action_next_item"/>
                 </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/layoutMeleeDefenderMods"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" 
-                    android:gravity="center">
-                    <Button
-                        android:id="@+id/btnMeleeDefenderAdd"
-                        android:text="Add"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
-                    <Button
-                        android:id="@+id/btnMeleeDefenderReset"
-                        android:text="Reset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@+id/btnMeleeDefenderAdd"
-                        android:layout_toRightOf="@+id/btnMeleeDefenderAdd"
-                        android:background="@drawable/blue_button"
-                        style="@style/button_text" />
-                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+            android:id="@+id/layoutMeleeAttackerDefender">
+        
+            <LinearLayout
+                android:id="@+id/layoutMeleeAttackerMods"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".43"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/btnMeleeAttackerReset"
+                    android:text="Reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/btnMeleeAttackerAdd"
+                    android:layout_toRightOf="@+id/btnMeleeAttackerAdd"
+                    android:background="@drawable/blue_button"
+                    style="@style/button_text" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/layoutMeleeAddMods"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".14"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/btnMeleeAdd"
+                    android:text="Add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/blue_button"
+                    style="@style/button_text" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/layoutMeleeDefenderMods"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".43"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/btnMeleeDefenderReset"
+                    android:text="Reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/btnMeleeDefenderAdd"
+                    android:layout_toRightOf="@+id/btnMeleeDefenderAdd"
+                    android:background="@drawable/blue_button"
+                    style="@style/button_text" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
