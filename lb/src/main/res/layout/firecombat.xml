@@ -35,14 +35,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="1.0">
-                    <TextView
-                        android:text="Value"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".15"
-                        android:layout_toLeftOf="@+id/btnFireAttackerPrev"
-                        android:id="@+id/lblFireAttackerValue" />
+
                     <Button
                         android:id="@+id/btnFireAttackerPrev"
                         android:layout_width="0dp"
@@ -57,7 +50,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/btnFireAttackerPrev"
                         android:layout_alignTop="@+id/btnFireAttackerPrev"
-                        android:layout_weight=".55"
+                        android:layout_weight=".70"
                         android:gravity="center" />
                     <Button
                         android:id="@+id/btnFireAttackerNext"
@@ -190,14 +183,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="1.0">
-                    <TextView
-                        android:text="Value"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".15"
-                        android:layout_toLeftOf="@+id/btnFireDefenderPrev"
-                        android:id="@+id/lblFireDefenderValue" />
+
                     <Button
                         android:id="@+id/btnFireDefenderPrev"
                         android:layout_width="0dp"
@@ -212,7 +198,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/btnFireDefenderPrev"
                         android:layout_alignTop="@+id/btnFireDefenderPrev"
-                        android:layout_weight=".55"
+                        android:layout_weight=".70"
                         android:gravity="center" />
                     <Button
                         android:id="@+id/btnFireDefenderNext"
@@ -293,7 +279,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight=".15"
                         android:layout_toLeftOf="@+id/btnFireDefenderIncrPrev"
-                        android:id="@+id/lblFireDefenderIncr" />
+                        android:id="@+id/lblFireDefenderIncr"
+                        android:paddingStart="10dp" />
                     <Button
                         android:id="@+id/btnFireDefenderIncrPrev"
                         android:layout_width="0dp"
@@ -350,59 +337,125 @@
                     android:id="@+id/spinFireOdds"/>
 
                 <LinearLayout
-                        android:id="@+id/layoutFireDice"
-                        android:orientation="horizontal"
-                        android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:minWidth="25dp"
+                    android:minHeight="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/layoutFireResults">
+                    <LinearLayout
+                        android:id="@+id/layoutFireResults2"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                        android:gravity="center">
-                    <ImageView
-                            android:id="@+id/imgFireDie1"
-                            android:src="@drawable/die6_whiteblack_1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:clickable="true" />
-                    <ImageView
-                            android:id="@+id/imgFireDie2"
-                            android:src="@drawable/die6_redwhite_1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_toRightOf="@+id/imgFireDie1"
-                            android:clickable="true" />
-                    <ImageView
-                            android:id="@+id/imgFireDie3"
-                            android:src="@drawable/die6_bluewhite_1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_toRightOf="@+id/imgFireDie2"
-                            android:clickable="true" />
-                    <ImageView
-                            android:id="@+id/imgFireDie4"
-                            android:src="@drawable/die6_blackwhite_1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_toRightOf="@+id/imgFireDie3"
-                            android:clickable="true" />
-                    <ImageView
-                            android:id="@+id/imgFireDie5"
-                            android:src="@drawable/die6_blackred_1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_toRightOf="@+id/imgFireDie4"
-                            android:clickable="true" />
-                    <Button
-                            android:id="@+id/btnFireDiceRoll"
-                            android:text="Roll"
-                            android:layout_width="wrap_content"
+                        android:weightSum="1.0">
+                        <TextView
+                            android:text="NE"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_alignTop="@+id/btnFireDefenderIncrPrev"
-                            android:layout_toRightOf="@+id/imgFireDie5"
-                            android:background="@drawable/red_button"
-                            style="@style/button_text" />
-
+                            android:layout_weight=".15"
+                            android:layout_toRightOf="@+id/lblFireResults"
+                            android:id="@+id/txtFireResults"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical" />
+                        <ImageView
+                            android:id="@+id/imgFireLeaderLossSide"
+                            android:src="@drawable/attacker"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="0.10"
+                            android:layout_toRightOf="@+id/txtFireResults"
+                            android:layout_gravity="center"
+                            android:fitsSystemWindows="true"
+                            android:scaleType="fitCenter"
+                            android:visibility="visible" />
+                        <TextView
+                            android:text="Leg 5 hours"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".40"
+                            android:layout_toRightOf="@+id/imgFireLeaderLossSide"
+                            android:id="@+id/txtFireLeaderLoss"
+                            android:visibility="visible"
+                            android:layout_marginLeft="2dp"
+                            android:layout_gravity="center_vertical" />
+                        <ImageView
+                            android:id="@+id/imgFireLeaderLoss"
+                            android:src="@drawable/tombstone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.10"
+                            android:layout_toRightOf="@+id/txtFireLeaderLoss"
+                            android:layout_gravity="center"
+                            android:visibility="visible" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-            
+            <LinearLayout
+                android:id="@+id/layoutFireDice"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:gravity="center"
+                android:layout_gravity="center_vertical">
+                <ImageView
+                    android:id="@+id/imgFireDie1"
+                    android:src="@drawable/die6_whiteblack_1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+                <ImageView
+                    android:id="@+id/imgFireDie2"
+                    android:src="@drawable/die6_redwhite_1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@+id/imgFireDie1"
+                    android:clickable="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+                <ImageView
+                    android:id="@+id/imgFireDie3"
+                    android:src="@drawable/die6_bluewhite_1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@+id/imgFireDie2"
+                    android:clickable="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+                <ImageView
+                    android:id="@+id/imgFireDie4"
+                    android:src="@drawable/die6_blackwhite_1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@+id/imgFireDie3"
+                    android:clickable="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+                <ImageView
+                    android:id="@+id/imgFireDie5"
+                    android:src="@drawable/die6_blackred_1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@+id/imgFireDie4"
+                    android:clickable="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp" />
+                <Button
+                    android:id="@+id/btnFireDiceRoll"
+                    android:text="Roll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/btnFireDefenderIncrPrev"
+                    android:layout_toRightOf="@+id/imgFireDie5"
+                    android:background="@drawable/red_button"
+                    style="@style/button_text" />
+
+            </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/layoutFireMods"
                 android:orientation="horizontal"
@@ -444,7 +497,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight=".05"
                     android:layout_toRightOf="@+id/btnFireMinus1"
-                    android:id="@+id/lblFireDiv" android:gravity="center_horizontal"/>
+                    android:id="@+id/lblFireDiv" android:gravity="center_horizontal" />
                 <Button
                     android:id="@+id/btnFirePlus1"
                     android:text="+1"
@@ -474,70 +527,6 @@
                     android:layout_toRightOf="@+id/lblFirePlus3"
                     android:background="@drawable/blue_button"
                     style="@style/button_text" />
-            </LinearLayout>
-            
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25dp"
-            android:minHeight="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/layoutFireResults">
-            <LinearLayout
-                android:id="@+id/layoutFireResults2"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1.0">
-                <TextView
-                    android:text="Results"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".20"
-                    android:id="@+id/lblFireResults"
-                    android:layout_gravity="center_vertical" />
-                <TextView
-                    android:text="NE"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".15"
-                    android:layout_toRightOf="@+id/lblFireResults"
-                    android:id="@+id/txtFireResults"
-                    android:textStyle="bold"
-                    android:layout_gravity="center_vertical" />
-                <ImageView
-                    android:id="@+id/imgFireLeaderLossSide"
-                    android:src="@drawable/attacker"
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:layout_weight="0.10"
-                    android:layout_toRightOf="@+id/txtFireResults"
-                    android:layout_gravity="center"
-                    android:fitsSystemWindows="true"
-                    android:scaleType="fitCenter"
-                    android:visibility="visible" />
-                <TextView
-                    android:text="Leg 5 hours"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".40"
-                    android:layout_toRightOf="@+id/imgFireLeaderLossSide"
-                    android:id="@+id/txtFireLeaderLoss"
-                    android:visibility="visible"
-                    android:layout_marginLeft="2dp"
-                    android:layout_gravity="center_vertical" />
-                <ImageView
-                    android:id="@+id/imgFireLeaderLoss"
-                    android:src="@drawable/tombstone"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.10"
-                    android:layout_toRightOf="@+id/txtFireLeaderLoss"
-                    android:layout_gravity="center"
-                    android:visibility="visible" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
