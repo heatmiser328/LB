@@ -17,6 +17,12 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 	}
 
 	@Override
+	public int getCount() {
+		// get item count - equal to number of tabs
+		return 4;
+	}
+
+	@Override
 	public Fragment getItem(int index) {
 
 		switch (index) {
@@ -33,9 +39,17 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 	}
 
 	@Override
-	public int getCount() {
-		// get item count - equal to number of tabs
-		return 4;
+	public String getPageTitle(int position) {
+		switch (position) {
+			case 0:
+				return "Fire";
+			case 1:
+				return "Melee";
+			case 2:
+				return "Morale";
+			case 3:
+				return "General";
+		}
+		return "";
 	}
-
 }

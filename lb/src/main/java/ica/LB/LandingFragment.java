@@ -25,7 +25,7 @@ import android.widget.*;
 /**
  * Created by jcapuano on 5/18/2014.
  */
-public class LandingActivityFragment extends Fragment {
+public class LandingFragment extends Fragment {
     private View rootView;
 
     @Override

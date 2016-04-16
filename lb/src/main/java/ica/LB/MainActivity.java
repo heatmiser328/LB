@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Context context;
     private Battle battle;
     private Scenario scenario;
+    private BattleFragment battleView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,8 +152,9 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.battleReset) {
-            if (battle != null && scenario != null) {
+            if (battleView != null && battle != null && scenario != null) {
                 Toast.makeText(MainActivity.this, "Reset " + battle.getName() + " : " + scenario.getName(), Toast.LENGTH_SHORT).show();
+                battleView.reset();
             }
             return true;
         }
@@ -166,19 +168,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showLanding() {
-        Toast.makeText(MainActivity.this, "Landing", Toast.LENGTH_SHORT).show();
-        changeFragment(new LandingActivityFragment());
+        Toast.makeText(MainActivity.this, "Select a Battle", Toast.LENGTH_SHORT).show();
+        battleView = null;
+        changeFragment(new LandingFragment());
     }
 
     private void showBattle(Battle battle, Scenario scenario) {
         Toast.makeText(MainActivity.this, "Selected " + battle.getName() + " : " + scenario.getName(), Toast.LENGTH_SHORT).show();
 
-        Fragment battleDetail = new BattleActivityFragment();
-        //Intent battleDetail = new Intent (me, BattleActivity.class);
-        //battleDetail.putExtra("Battle", battle.getId());
-        //battleDetail.putExtra ("Scenario", scenario.getId());
-        //startActivity (battleDetail);
-        changeFragment(battleDetail);
+        battleView = new BattleFragment();
+        Bundle args = new Bundle();
+        args.putInt("Battle", battle.getId());
+        args.putInt("Scenario", scenario.getId());
+        battleView.setArguments(args);
+        changeFragment(battleView);
     }
 
     private void changeFragment(Fragment fragment) {//, boolean doAddToBackStack) {

@@ -39,7 +39,9 @@ public class Lb {
     
 	public static Game getGame(int battleid, int scenarioid) {
 		Battle battle = getBattle(battleid);
+        if (battle == null) return null;
 		Scenario scenario = battle.getScenario(scenarioid);
+        if (scenario == null) return null;
 		Saved saved = getSaved(battle, scenario);
         if (saved == null || saved.getBattle() != battleid && saved.getScenario() != scenarioid) {
             saved = new Saved(battleid, scenarioid);
