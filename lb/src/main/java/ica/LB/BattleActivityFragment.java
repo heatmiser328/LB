@@ -7,11 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import ica.LB.Core.*;
+
 /**
  * Created by jcapuano on 5/18/2014.
  */
 public class BattleActivityFragment extends Fragment {
     private View rootView;
+
+    @Override
+    public void setArguments(Bundle args) {
+        super.setArguments(args);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
