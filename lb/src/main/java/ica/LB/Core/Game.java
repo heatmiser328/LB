@@ -12,22 +12,14 @@ public class Game {
     private Saved saved;
 	private String[] phases = new String[] {
 		"Command",
-		"Imperial: Charge a Cheval",
-		"Imperial: Movement",
-		"Imperial: Defensive Fire",
-		"Imperial: Offensive Fire",
-		"Imperial: Melee Assault",
-		"Imperial: Rally",
-		"Imperial: Rout",
-		"Imperial: Readiness Recovery",
-		"Sovereign: Charge a Cheval",
-		"Sovereign: Movement",
-		"Sovereign: Defensive Fire",
-		"Sovereign: Offensive Fire",
-		"Sovereign: Melee Assault",
-		"Sovereign: Rally",
-		"Sovereign: Rout",
-		"Sovereign: Readiness Recovery"
+		"Charge a Cheval",
+		"Movement",
+		"Defensive Fire",
+		"Offensive Fire",
+		"Melee Assault",
+		"Rally",
+		"Rout",
+		"Readiness Recovery"
 	};
 	
 	public Game(Battle b, Scenario s, Saved sv) {
@@ -85,6 +77,10 @@ public class Game {
         return phases[saved.getPhase()];
 	}
 
+	public int getCurrentPlayer() {
+        return saved.getPlayer();
+	}
+
 	public void reset() {
 		saved.reset(battle, scenario);
 	}
@@ -100,7 +96,11 @@ public class Game {
 	public void nextPhase() {
 		saved.setPhase(saved.getPhase()+1);
 		if (saved.getPhase() >= phases.length) {
-			nextTurn();
+            if (saved.getPlayer() > 0) {
+                nextTurn();
+            } else {
+                nextPlayer();
+            }
 			saved.setPhase(0);
 		}
 	}
@@ -108,11 +108,26 @@ public class Game {
 	public void prevPhase() {
 		saved.setPhase(saved.getPhase()-1);
 		if (saved.getPhase() < 0) {
-			prevTurn();
+            if (saved.getPlayer() < 1) {
+                prevTurn();
+            } else {
+                prevPlayer();
+            }
 			saved.setPhase(phases.length - 1);
 		}
 	}
-			
+
+	public void nextPlayer() {
+        if (saved.getPlayer() == 0) {
+            saved.setPlayer(1);
+        } else {
+            saved.setPlayer(0);
+        }
+	}
+    public void prevPlayer() {
+        nextPlayer();
+    }
+
     private int getTurnOffset(int turn) {
         return (turn - 1) * 20;
     }

@@ -15,7 +15,7 @@ public class Format {
     }        
     
     public static String TurnDate(Date dt) {
-        SimpleDateFormat df = new SimpleDateFormat ("MMMM d, yyyy hh:mm a");
+        SimpleDateFormat df = new SimpleDateFormat ("MMMM d, yyyy HH:mm");
 
         return df.format(dt);
     }        

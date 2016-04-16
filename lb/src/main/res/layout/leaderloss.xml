@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/layoutLeaderLoss"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:weightSum="1.0">
+
+        <ImageView
+            android:id="@+id/imgLeaderLossSide"
+            android:src="@drawable/attacker"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="0.10"
+            android:layout_toRightOf="@+id/lossLayout"
+            android:layout_gravity="center"
+            android:fitsSystemWindows="true"
+            android:scaleType="fitCenter"
+            android:visibility="visible" />
+        <TextView
+            android:id="@+id/txtLeaderLoss"
+            android:text="Leg 5 hours"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:layout_toRightOf="@+id/imgLeaderLossSide"
+            android:visibility="visible"
+            android:layout_marginLeft="2dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal" />
+        <ImageView
+            android:id="@+id/imgLeaderLoss"
+            android:src="@drawable/tombstone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.10"
+            android:layout_toRightOf="@+id/txtLeaderLoss"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+    </LinearLayout>
+</LinearLayout>

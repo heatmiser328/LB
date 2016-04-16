@@ -8,12 +8,14 @@ public class Saved {
 	private int scenario;
 	private int turn;
 	private int phase;
+	private int player;
 
     public Saved() {
 		battle = 0;
 		scenario = 0;
 		turn = 1;
 		phase = 0;
+		player = 0;
     }
 
 	public Saved(int battleid, int scenarioid) {
@@ -43,13 +45,16 @@ public class Saved {
         turn = v;
     }
     
-	public int getPhase() {
-        return phase;
-    }
+	public int getPhase() { return phase; }
 	public void setPhase(int v) {
         phase = v;
     }
-	
+
+	public int getPlayer() { return player;	}
+	public void setPlayer(int v) {
+		player = v;
+	}
+
     public boolean isValid() {
         return battle > 0 && scenario > 0;
     }
@@ -59,5 +64,6 @@ public class Saved {
 		scenario = s.getId();
 		turn = 1;
 		phase = 0;
+		player = 0;
 	}
 }

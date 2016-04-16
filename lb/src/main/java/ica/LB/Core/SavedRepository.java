@@ -34,7 +34,10 @@ public class SavedRepository {
             } 
             else if (name.equals("phase")) {
                 saved.setPhase(reader.nextInt());
-            } 
+            }
+            else if (name.equals("player")) {
+                saved.setPlayer(reader.nextInt());
+            }
             else {
                 reader.skipValue();
             }
@@ -59,6 +62,7 @@ public class SavedRepository {
         writer.name("scenario").value(saved.getScenario());
         writer.name("turn").value(saved.getTurn());
         writer.name("phase").value(saved.getPhase());
+        writer.name("player").value(saved.getPlayer());
         writer.endObject();
     }    
 }

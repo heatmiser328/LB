@@ -53,7 +53,7 @@ public class MeleeCombatFragment extends Fragment {
 	private Button btnMeleePlus1;
 	private Button btnMeleePlus3;
 	private Button btnMeleePlus6;
-    
+
 	private TextView txtMeleeResults;
 	private TextView txtMeleeLeaderLoss;
 	private ImageView imgMeleeLeaderLossSide;
@@ -108,10 +108,10 @@ public class MeleeCombatFragment extends Fragment {
 		    btnMeleePlus6 = (Button)rootView.findViewById(R.id.btnMeleePlus6);
         
 		    // results
-		    txtMeleeResults = (TextView)rootView.findViewById(R.id.txtMeleeResults);
-		    imgMeleeLeaderLossSide = (ImageView)rootView.findViewById(R.id.imgMeleeLeaderLossSide);
-		    txtMeleeLeaderLoss = (TextView)rootView.findViewById(R.id.txtMeleeLeaderLoss);
-		    imgMeleeLeaderLoss = (ImageView)rootView.findViewById(R.id.imgMeleeLeaderLoss);
+		    txtMeleeResults = (TextView)rootView.findViewById(R.id.txtResults);
+		    imgMeleeLeaderLossSide = (ImageView)rootView.findViewById(R.id.imgLeaderLossSide);
+		    txtMeleeLeaderLoss = (TextView)rootView.findViewById(R.id.txtLeaderLoss);
+		    imgMeleeLeaderLoss = (ImageView)rootView.findViewById(R.id.imgLeaderLoss);
         
 		    editMeleeAttackerValue.setText("0");
 		    editMeleeDefenderValue.setText("0");

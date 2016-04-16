@@ -1,5 +1,6 @@
 package ica.LB;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,12 +29,14 @@ import ica.LB.Core.*;
  */
 public class BattleFragment extends Fragment {
     private View rootView;
+    private ImageView imgGame;
     private TextView txtTurn;
     private Button btnTurnPrev;
     private Button btnTurnNext;
     private TextView txtPhase;
     private Button btnPhasePrev;
     private Button btnPhaseNext;
+    private ImageButton btnPlayer;
 
     private ViewPager viewPager;
     private TabsPagerAdapter mAdapter;
@@ -61,6 +64,8 @@ public class BattleFragment extends Fragment {
             rootView = inflater.inflate(R.layout.battle, container, false);
         }
 
+        imgGame = (ImageView)rootView.findViewById(R.id.imageBattle);
+
         // current turn
         txtTurn = (TextView)rootView.findViewById(R.id.textTurn);
         btnTurnPrev = (Button)rootView.findViewById(R.id.btnTurnPrev);
@@ -70,6 +75,9 @@ public class BattleFragment extends Fragment {
         txtPhase = (TextView)rootView.findViewById(R.id.textPhase);
         btnPhasePrev = (Button)rootView.findViewById(R.id.btnPhasePrev);
         btnPhaseNext = (Button)rootView.findViewById(R.id.btnPhaseNext);
+
+        // current player
+        btnPlayer = (ImageButton)rootView.findViewById(R.id.btnCurrentPlayer);
 
         // tabs
         viewPager = (ViewPager) rootView.findViewById(R.id.battleViews);
@@ -104,6 +112,12 @@ public class BattleFragment extends Fragment {
             }
         });
 
+        btnPlayer.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                nextPlayer();
+            }
+        });
 
         // swipe to change turns
         turnGestDetector = new GestureDetector(getContext(), new SimpleOnGestureListener() {
@@ -237,9 +251,22 @@ public class BattleFragment extends Fragment {
         save();
     }
 
+    private void nextPlayer() {
+        game.nextPlayer();
+        update();
+        save();
+    }
     private void update() {
-        txtTurn.setText(game.getCurrentTurn());
-        txtPhase.setText(game.getCurrentPhase());
+        if (game != null) {
+            imgGame.setBackgroundResource(getContext().getResources().getIdentifier("drawable/" + game.getBattle().getImage(), null, getContext().getPackageName()));
+            txtTurn.setText(game.getCurrentTurn());
+            txtPhase.setText(game.getCurrentPhase());
+            if (game.getCurrentPlayer() == 0) {
+                btnPlayer.setBackgroundResource(R.drawable.imperial);
+            } else {
+                btnPlayer.setBackgroundResource(R.drawable.coalition);
+            }
+        }
     }
 
     private void load(Bundle args) {

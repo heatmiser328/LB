@@ -176,6 +176,10 @@ public class MainActivity extends AppCompatActivity {
     private void showBattle(Battle battle, Scenario scenario) {
         Toast.makeText(MainActivity.this, "Selected " + battle.getName() + " : " + scenario.getName(), Toast.LENGTH_SHORT).show();
 
+        getSupportActionBar().setTitle(battle.getName());
+        getSupportActionBar().setIcon(context.getResources().getIdentifier("drawable/" + battle.getImage(), null, context.getPackageName()));
+        getSupportActionBar().setSubtitle(scenario.getName());
+
         battleView = new BattleFragment();
         Bundle args = new Bundle();
         args.putInt("Battle", battle.getId());

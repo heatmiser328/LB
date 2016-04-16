@@ -332,72 +332,24 @@
                 <Spinner
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight=".65"
+                    android:layout_weight=".25"
                     android:layout_toRightOf="@+id/lblFireOdds"
                     android:id="@+id/spinFireOdds"/>
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:minWidth="25dp"
-                    android:minHeight="25dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/layoutFireResults">
-                    <LinearLayout
-                        android:id="@+id/layoutFireResults2"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:weightSum="1.0">
-                        <TextView
-                            android:text="NE"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight=".15"
-                            android:layout_toRightOf="@+id/lblFireResults"
-                            android:id="@+id/txtFireResults"
-                            android:textStyle="bold"
-                            android:layout_gravity="center_vertical" />
-                        <ImageView
-                            android:id="@+id/imgFireLeaderLossSide"
-                            android:src="@drawable/attacker"
-                            android:layout_width="0dp"
-                            android:layout_height="45dp"
-                            android:layout_weight="0.10"
-                            android:layout_toRightOf="@+id/txtFireResults"
-                            android:layout_gravity="center"
-                            android:fitsSystemWindows="true"
-                            android:scaleType="fitCenter"
-                            android:visibility="visible" />
-                        <TextView
-                            android:text="Leg 5 hours"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight=".40"
-                            android:layout_toRightOf="@+id/imgFireLeaderLossSide"
-                            android:id="@+id/txtFireLeaderLoss"
-                            android:visibility="visible"
-                            android:layout_marginLeft="2dp"
-                            android:layout_gravity="center_vertical" />
-                        <ImageView
-                            android:id="@+id/imgFireLeaderLoss"
-                            android:src="@drawable/tombstone"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.10"
-                            android:layout_toRightOf="@+id/txtFireLeaderLoss"
-                            android:layout_gravity="center"
-                            android:visibility="visible" />
-                    </LinearLayout>
-                </LinearLayout>
+                <include
+                    layout="@layout/fireresults"
+                    android:layout_width="0dp"
+                    android:layout_weight=".6"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/layoutFireDice"
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
                 android:gravity="center"
                 android:layout_gravity="center_vertical">
                 <ImageView

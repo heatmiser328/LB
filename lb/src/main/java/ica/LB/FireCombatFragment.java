@@ -67,8 +67,8 @@ public class FireCombatFragment extends Fragment {
 	private Button btnFirePlus1;
 	private Button btnFirePlus3;
 	private Button btnFirePlus6;
-	
-	private TextView txtFireResults;
+
+	private ImageView imgFireResults;
 	private TextView txtFireLeaderLoss;
 	private ImageView imgFireLeaderLossSide;
 	private ImageView imgFireLeaderLoss;
@@ -151,10 +151,10 @@ public class FireCombatFragment extends Fragment {
 		    btnFirePlus6 = (Button)rootView.findViewById(R.id.btnFirePlus6);
         
 		    // results
-		    txtFireResults = (TextView)rootView.findViewById(R.id.txtFireResults);
-		    imgFireLeaderLossSide = (ImageView)rootView.findViewById(R.id.imgFireLeaderLossSide);
-		    txtFireLeaderLoss = (TextView)rootView.findViewById(R.id.txtFireLeaderLoss);
-		    imgFireLeaderLoss = (ImageView)rootView.findViewById(R.id.imgFireLeaderLoss);
+			imgFireResults = (ImageView) rootView.findViewById(R.id.imgResults);
+		    imgFireLeaderLossSide = (ImageView)rootView.findViewById(R.id.imgLeaderLossSide);
+		    txtFireLeaderLoss = (TextView)rootView.findViewById(R.id.txtLeaderLoss);
+		    imgFireLeaderLoss = (ImageView)rootView.findViewById(R.id.imgLeaderLoss);
         
 		    // attacker
 		    btnAttackerValuePrev.setOnClickListener(new OnClickListener() {
@@ -544,8 +544,21 @@ public class FireCombatFragment extends Fragment {
 	void updateResults() {
 		int d = (dice.getDie(0)*10) + dice.getDie(1);
 		String result = fc.resolve(odds, getDefenderIncrements(), d);
-		txtFireResults.setText(result, TextView.BufferType.NORMAL);
-					
+		//txtFireResults.setText(result, TextView.BufferType.NORMAL);
+		if (result == "1") {
+			imgFireResults.setImageResource(R.drawable.loss1);
+		} else if (result == "2") {
+			imgFireResults.setImageResource(R.drawable.loss2);
+		} else if (result == "3") {
+			imgFireResults.setImageResource(R.drawable.loss3);
+		} else if (result == "4") {
+			imgFireResults.setImageResource(R.drawable.loss4);
+		} else if (result == "5") {
+			imgFireResults.setImageResource(R.drawable.loss5);
+		} else {
+			imgFireResults.setImageResource(R.drawable.loss_ne);
+		}
+
 		LeaderLossResult ll = fc.resolveLeaderLoss(d, dice.getDie(2), dice.getDie(3), dice.getDie(4));
 		imgFireLeaderLossSide.setVisibility((ll.getKilled() || ll.getWounded() || ll.getCaptured()) ? View.VISIBLE : View.INVISIBLE);
 		imgFireLeaderLossSide.setImageResource (ll.getAttacker() ? R.drawable.attacker : R.drawable.defender);

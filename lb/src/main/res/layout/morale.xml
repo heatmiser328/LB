@@ -12,15 +12,9 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:weightSum="1.0">
-            <TextView
-                android:text="Morale"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".15"
-                android:layout_toLeftOf="@+id/btnMoralePrev"
-                android:id="@+id/lblMoraleValue" />
+            android:weightSum="1.0"
+            android:touchscreenBlocksFocus="false"
+            android:gravity="center_horizontal">
             <Button
                 android:id="@+id/btnMoralePrev"
                 android:layout_width="0dp"
@@ -102,12 +96,32 @@
                     android:layout_alignTop="@+id/btnMoraleValue16"
                     android:textAppearance="?android:attr/textAppearanceSmall"/>
         </LinearLayout>
-        
+
+        <LinearLayout
+            android:id="@+id/layoutMoraleResults"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:text="Pass"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtMoraleResults"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:gravity="center" />
+        </LinearLayout>
+
         <LinearLayout
             android:id="@+id/layoutMoraleDice"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:paddingBottom="15dp">
             
             <ImageView
                 android:id="@+id/imgMoraleDie1"
@@ -211,31 +225,6 @@
                 android:layout_toRightOf="@+id/lblMoralePlus3"
                 android:background="@drawable/blue_button"
                 style="@style/button_text" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/layoutMoraleResults"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1.0" android:paddingTop="20dp">
-            <TextView
-                android:text="Results"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".20"
-                android:id="@+id/lblMoraleResults"
-                android:layout_gravity="center_vertical" />
-            <TextView
-                android:text="Pass"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".50"
-                android:layout_toRightOf="@+id/lblMoraleResults"
-                android:id="@+id/txtMoraleResults"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_gravity="center_vertical" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
