@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dice="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0">
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:id="@+id/layoutMeleeAttacker">
+                <TextView
+                    android:text="Attacker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtMeleeAttacker"
+                    style="@style/group_text" />
+                <LinearLayout
+                    android:id="@+id/layoutMeleeAttackerValue"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1.0">
+                    <Button
+                        android:id="@+id/btnMeleeAttackerPrev"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".15"
+                        android:background="@drawable/ic_action_previous_item"/>
+                    <EditText
+                        android:id="@+id/editMeleeAttackerValue"
+                        android:inputType="numberDecimal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/btnMeleeAttackerPrev"
+                        android:layout_alignTop="@+id/btnMeleeAttackerPrev"
+                        android:layout_weight=".70"
+                        android:gravity="center" />
+                    <Button
+                        android:id="@+id/btnMeleeAttackerNext"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".15"
+                        android:layout_alignTop="@+id/btnMeleeAttackerPrev"
+                        android:layout_toRightOf="@+id/editMeleeAttackerValue"
+                        android:background="@drawable/ic_action_next_item"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:id="@+id/layoutMeleeDefender">
+                <TextView
+                    android:text="Defender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtMeleeDefender"
+                    style="@style/group_text" />
+                <LinearLayout
+                    android:id="@+id/layoutMeleeDefenderValue"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1.0">
+                    <Button
+                        android:id="@+id/btnMeleeDefenderPrev"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".15"
+                        android:background="@drawable/ic_action_previous_item"/>
+                    <EditText
+                        android:id="@+id/editMeleeDefenderValue"
+                        android:inputType="numberDecimal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/btnMeleeDefenderPrev"
+                        android:layout_alignTop="@+id/btnMeleeDefenderPrev"
+                        android:layout_weight=".70"
+                        android:gravity="center" />
+                    <Button
+                        android:id="@+id/btnMeleeDefenderNext"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".15"
+                        android:layout_alignTop="@+id/btnMeleeDefenderPrev"
+                        android:layout_toRightOf="@+id/editMeleeDefenderValue"
+                        android:background="@drawable/ic_action_next_item"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+            android:id="@+id/layoutMeleeAttackerDefender">
+        
+            <LinearLayout
+                android:id="@+id/layoutMeleeAttackerMods"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".40"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/btnMeleeAttackerReset"
+                    android:text="Reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/btnMeleeAttackerAdd"
+                    android:layout_toRightOf="@+id/btnMeleeAttackerAdd"
+                    android:background="@drawable/blue_button"
+                    style="@style/button_text" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/layoutMeleeAddMods"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/btnMeleeAdd"
+                    android:text="Add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/blue_button"
+                    style="@style/button_text" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/layoutMeleeDefenderMods"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".40"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/btnMeleeDefenderReset"
+                    android:text="Reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/btnMeleeDefenderAdd"
+                    android:layout_toRightOf="@+id/btnMeleeDefenderAdd"
+                    android:background="@drawable/blue_button"
+                    style="@style/button_text" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutMeleeOdds">
+            <LinearLayout
+                android:id="@+id/layoutMeleeOddsSelect"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1.0" android:paddingTop="15px">
+                <TextView
+                    android:text="Odds"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_toLeftOf="@+id/spinMeleeOdds"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/lblMeleeOdds" />
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toRightOf="@+id/lblMeleeOdds"
+                    android:id="@+id/spinMeleeOdds" />
+
+                <include
+                    layout="@layout/meleeresults"
+                    android:layout_weight=".6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutMeleeDice"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/imgMeleeDie1"
+                    android:src="@drawable/die6_whiteblack_1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:clickable="true" />
+                <ImageView
+                    android:id="@+id/imgMeleeDie2"
+                    android:src="@drawable/die6_redwhite_1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_toRightOf="@+id/imgMeleeDie1"
+                    android:clickable="true" />
+                <ImageView
+                    android:id="@+id/imgMeleeDie3"
+                    android:src="@drawable/die6_bluewhite_1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_toRightOf="@+id/imgMeleeDie2"
+                    android:clickable="true" />
+                <ImageView
+                    android:id="@+id/imgMeleeDie4"
+                    android:src="@drawable/die6_blackwhite_1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_toRightOf="@+id/imgMeleeDie3"
+                    android:clickable="true" />
+                <ImageView
+                    android:id="@+id/imgMeleeDie5"
+                    android:src="@drawable/die6_blackred_1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_toRightOf="@+id/imgMeleeDie4"
+                    android:clickable="true" />
+                <Button
+                    android:id="@+id/btnMeleeDiceRoll"
+                    android:text="Roll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/btnMeleeDefenderIncrPrev"
+                    android:layout_toRightOf="@+id/imgMeleeDie5"
+                    android:background="@drawable/red_button"
+                    style="@style/button_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutMeleeMods"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1.0" android:paddingTop="15px">
+                <Button
+                    android:id="@+id/btnMeleeMinus6"
+                    android:text="-6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:background="@drawable/blue_button"
+                    style="@style/button_text" />
+                <Button
+                    android:id="@+id/btnMeleeMinus3"
+                    android:text="-3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnMeleeMinus6"
+                    android:background="@drawable/blue_button"
+                    android:layout_toRightOf="@+id/btnMeleeMinus6"
+                    style="@style/button_text" />
+                <Button
+                    android:id="@+id/btnMeleeMinus1"
+                    android:text="-1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnMeleeMinus6"
+                    android:background="@drawable/blue_button"
+                    android:layout_toRightOf="@+id/btnMeleeMinus3"
+                    style="@style/button_text" />
+                <TextView
+                    android:text=" / "
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".05"
+                    android:layout_toRightOf="@+id/btnMeleeMinus1"
+                    android:id="@+id/lblMeleeDiv" android:gravity="center_horizontal"/>
+                <Button
+                    android:id="@+id/btnMeleePlus1"
+                    android:text="+1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:background="@drawable/blue_button"
+                    android:layout_toRightOf="@+id/lblMeleeDiv"
+                    style="@style/button_text" />
+                <Button
+                    android:id="@+id/btnMeleePlus3"
+                    android:text="+3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnMeleeMinus6"
+                    android:background="@drawable/blue_button"
+                    android:layout_toRightOf="@+id/lblMeleePlus1"
+                    style="@style/button_text" />
+                <Button
+                    android:id="@+id/btnMeleePlus6"
+                    android:text="+6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:layout_alignTop="@+id/btnMeleeMinus6"
+                    android:layout_toRightOf="@+id/lblMeleePlus3"
+                    android:background="@drawable/blue_button"
+                    style="@style/button_text" />
+            </LinearLayout>
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+</ScrollView>

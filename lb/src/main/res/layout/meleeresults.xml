@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/layoutFireResults"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1.0">
+        <TextView
+            android:id="@+id/txtResults"
+            android:text="NE"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".2"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal|center_vertical" />
+        <include
+            layout="@layout/leaderloss"
+            android:layout_width="0dp"
+            android:layout_weight=".8"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
