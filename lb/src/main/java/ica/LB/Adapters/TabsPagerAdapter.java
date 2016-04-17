@@ -29,9 +29,9 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 		case 0:
             return new FireCombatFragment();
 		case 1:
-            return new MeleeCombatFragment();
-		case 2:
             return new MoraleFragment();
+		case 2:
+			return new MeleeCombatFragment();
 		case 3:
             return new GeneralFragment();
 		}
@@ -44,9 +44,9 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 			case 0:
 				return "Fire";
 			case 1:
-				return "Melee";
-			case 2:
 				return "Morale";
+			case 2:
+				return "Melee";
 			case 3:
 				return "General";
 		}
