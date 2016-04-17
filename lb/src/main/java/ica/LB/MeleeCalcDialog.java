@@ -102,11 +102,11 @@ public class MeleeCalcDialog extends DialogFragment {
         radioMeleeAttacker = (RadioButton)view.findViewById(R.id.radioMeleeAttacker);
         radioMeleeDefender = (RadioButton)view.findViewById(R.id.radioMeleeDefender);
     
-		editMeleeIncrValue.setText("1");
+		editMeleeIncrValue.setText("8");
 		editMeleeLossValue.setText("0");
-		editMeleeValueValue.setText("1");
+		editMeleeValueValue.setText("12");
 		editMeleeLanceValue.setText("0");
-		editMeleeTotalValue.setText("1");
+		editMeleeTotalValue.setText("12");
         
 		btnMeleeIncrPrev.setOnClickListener(new OnClickListener() {
 			@Override
